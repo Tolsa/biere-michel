@@ -12,6 +12,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'webpacker', '~> 3.0'
 gem 'figaro'
+gem 'cloudinary'
 
 
 
