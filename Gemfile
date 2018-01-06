@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'webpacker', '~> 3.0'
 gem 'figaro'
 gem 'cloudinary'
+gem 'simple_form'
 
 
 

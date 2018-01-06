@@ -129,3 +129,39 @@ p {
     margin-top: 40px;
   }
 }
+
+.inscription {
+  background: asset-url('inscription.jpg');
+  background-size: cover;
+  height: 100vh;
+  margin: 0px;
+  width: 100%;
+  padding: 32px;
+
+  .inscription-form {
+    background-color: rgba(255, 244, 229,0.7);
+    height: 80%;
+    width: 58%;
+    min-width: 500px;
+    margin: 20px 20px;
+  }
+}
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .contact-button {
+    border: solid 4px #FF9789;
+    color: #FF9789;
+    font-family: "Roboto Condensed";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    padding: 4px 12px;
+    font-size: 34px;
+  }
+}
