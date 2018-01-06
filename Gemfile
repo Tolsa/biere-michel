@@ -15,6 +15,7 @@ gem 'figaro'
 gem 'cloudinary'
 gem 'simple_form'
 gem 'devise'
+gem 'pundit'
 
 
 

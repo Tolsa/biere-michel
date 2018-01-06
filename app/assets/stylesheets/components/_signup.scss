@@ -1,0 +1,19 @@
+.sign-up-form {
+  height: 100vh;
+  z-index: 50;
+  background-color: #FFF4E6;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  padding: 17px 50px;
+}
+
+.wrapper-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  h2 {
+    color: $pink;
+    text-transform: uppercase;
+  }
+}
