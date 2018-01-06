@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105093343) do
+ActiveRecord::Schema.define(version: 20180106111757) do
+
+  create_table "beerlists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "beer_id"
+    t.integer "tasting_id"
+  end
 
   create_table "beers", force: :cascade do |t|
     t.string "name"
@@ -19,6 +26,48 @@ ActiveRecord::Schema.define(version: 20180105093343) do
     t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "guestlists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "guest_id"
+    t.integer "tasting_id"
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tastings", force: :cascade do |t|
+    t.date "date"
+    t.integer "capacity"
+    t.integer "beerlist_id"
+    t.integer "guestlist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["beerlist_id"], name: "index_tastings_on_beerlist_id"
+    t.index ["guestlist_id"], name: "index_tastings_on_guestlist_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
