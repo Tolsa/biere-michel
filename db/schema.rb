@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20180106120249) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "guests", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -36,10 +35,8 @@ ActiveRecord::Schema.define(version: 20180106120249) do
   create_table "tastings", force: :cascade do |t|
     t.date "date"
     t.integer "capacity"
-    t.integer "guestlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["guestlist_id"], name: "index_tastings_on_guestlist_id"
   end
 
   create_table "users", force: :cascade do |t|
