@@ -65,5 +65,30 @@
       Nous contacter
     </div>
   </div>
+
+  <div class="menu-admin">
+    <% if user_signed_in? %>
+
+
+    <%= link_to admin_path do %>
+        <%= t(".admin", default: "Espace brasseur") %>
+    <% end %>
+
+    <div class="connection">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <%= t(".sign_out", default: "Déconnexion") %>
+      <% end %>
+    </div>
+
+
+  </div>
+
+  <% else %>
+  <!-- Login link (when logged out) -->
+    <div class="connection">
+      <%= link_to "Connexion", new_user_session_path %>
+    </div>
+  <% end %>
+  </div>
 </div>
 

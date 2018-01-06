@@ -165,3 +165,17 @@ p {
     font-size: 34px;
   }
 }
+
+.menu-admin {
+  border-top: 4px solid #FF9789;
+  display: -webkit-box;
+  padding: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  color: #394351;
+}
