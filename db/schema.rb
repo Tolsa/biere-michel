@@ -15,13 +15,6 @@ ActiveRecord::Schema.define(version: 20180106120249) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "beerlists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "beer_id"
-    t.integer "tasting_id"
-  end
-
   create_table "beers", force: :cascade do |t|
     t.string "name"
     t.string "type"
@@ -29,13 +22,6 @@ ActiveRecord::Schema.define(version: 20180106120249) do
     t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "guestlists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "guest_id"
-    t.integer "tasting_id"
   end
 
   create_table "guests", force: :cascade do |t|
@@ -49,12 +35,8 @@ ActiveRecord::Schema.define(version: 20180106120249) do
   create_table "tastings", force: :cascade do |t|
     t.date "date"
     t.integer "capacity"
-    t.integer "beerlist_id"
-    t.integer "guestlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["beerlist_id"], name: "index_tastings_on_beerlist_id"
-    t.index ["guestlist_id"], name: "index_tastings_on_guestlist_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,11 +3,9 @@
 one:
   date: 2018-01-06
   capacity: 1
-  beerlist: one
   guestlist: one
 
 two:
   date: 2018-01-06
   capacity: 1
-  beerlist: two
   guestlist: two
