@@ -1,0 +1,2 @@
+module BeerlistsHelper
+end
