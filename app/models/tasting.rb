@@ -1,3 +1,3 @@
 class Tasting < ApplicationRecord
-  belongs_to :guestlist
+  belongs_to :guest
 end
