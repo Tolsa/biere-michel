@@ -34,7 +34,7 @@ class TastingsController < ApplicationController
   def update
     @tasting = Tasting.find(params[:id])
     if @tasting.update(tasting_params)
-      redirect_to tasting_path(@tasting)
+      redirect_to tastings_path
     else
       render :new
     end
