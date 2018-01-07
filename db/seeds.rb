@@ -13,9 +13,9 @@ tasting_attributes = [
 {
   date: "25 janvier 2018 à 19h00",
   capacity: 40
-}
+},
 {
-  date: "12 février 2018 à 20h00"
+  date: "12 février 2018 à 20h00",
   capacity: 35
 }
 ]
