@@ -1,6 +1,26 @@
-<h1>Ici tout ce qui touche aux tastings</h1>
-<%= Tasting.all %>
+<div class="index-tastings">
 
-<%= render 'tastings/new' %>
+  <h1>Liste des tastings</h1>
+  <div class="tableau-tastings">
+    <% @tastings.each do |tasting| %>
+      <div class="row">
+        <div class="col-xs-4">
+          <%= tasting.date %>
+        </div>
+        <div class="col-xs-4">
+          <%= tasting.capacity %>
+        </div>
+        <div class="col-xs-4">
+          <%= link_to "Modifier",  %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+  <%= render 'tastings/new' %>
+
+</div>
+
 
 

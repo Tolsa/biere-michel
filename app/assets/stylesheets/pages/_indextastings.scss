@@ -1,0 +1,27 @@
+.index-tastings {
+  height: 100vh;
+  z-index: 50;
+  background-color: #FFF4E6;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  padding: 17px 50px;
+
+  h1 {
+    color: $pink;
+  }
+}
+
+
+.tableau-tastings {
+  background-color: $white;
+  border: 1px solid $blue;
+  .row {
+    margin: 0px;
+
+  }
+  .col-xs-4 {
+    border-right: 1px solid $blue;
+    padding: 10px;
+  }
+}

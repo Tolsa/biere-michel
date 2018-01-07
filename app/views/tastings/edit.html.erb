@@ -1,0 +1,9 @@
+<div class="index-tastings">
+
+  <%= simple_form_for(@tasting) do |f| %>
+    <%= f.input :date, as: :string, placeholder: @tasting.date  %>
+    <%= f.input :capacity, as: :integer, placeholder: @tasting.capacity %>
+    <%= f.button :submit %>
+  <% end %>
+
+</div>

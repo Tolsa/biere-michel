@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180106120249) do
   end
 
   create_table "tastings", force: :cascade do |t|
-    t.date "date"
+    t.string "date"
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
