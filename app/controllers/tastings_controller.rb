@@ -1,6 +1,8 @@
 class TastingsController < ApplicationController
+
   def index
     @tastings = Tasting.all
+    @tasting = Tasting.new
   end
 
   def create
@@ -41,6 +43,6 @@ class TastingsController < ApplicationController
   private
 
   def tasting_params
-    params.require(:tasting).permit(:date, :capacity, :guestlist_id)
+    params.require(:tasting).permit(:date, :capacity)
   end
 end
