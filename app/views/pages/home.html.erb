@@ -70,9 +70,7 @@
     <% if user_signed_in? %>
 
 
-    <%= link_to admin_path do %>
-        <%= t(".admin", default: "Espace brasseur") %>
-    <% end %>
+    <%= link_to "Espace brasseur", tastings_path %>
 
     <div class="connection">
       <%= link_to destroy_user_session_path, method: :delete do %>

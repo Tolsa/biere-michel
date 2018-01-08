@@ -1,6 +1,8 @@
 class TastingsController < ApplicationController
+
   def index
     @tastings = Tasting.all
+    @tasting = Tasting.new
   end
 
   def create
@@ -15,6 +17,9 @@ class TastingsController < ApplicationController
   def destroy
     @tasting = Tasting.find(params[:id])
     @tasting.destroy
+    if @tasting.destroy
+      redirect_to tastings_path
+    end
   end
 
   def show
@@ -32,7 +37,7 @@ class TastingsController < ApplicationController
   def update
     @tasting = Tasting.find(params[:id])
     if @tasting.update(tasting_params)
-      redirect_to tasting_path(@tasting)
+      redirect_to tastings_path
     else
       render :new
     end
@@ -41,6 +46,6 @@ class TastingsController < ApplicationController
   private
 
   def tasting_params
-    params.require(:tasting).permit(:date, :capacity, :guestlist_id)
+    params.require(:tasting).permit(:date, :capacity)
   end
 end
