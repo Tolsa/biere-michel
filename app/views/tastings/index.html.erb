@@ -2,6 +2,17 @@
 
   <h1>Liste des tastings</h1>
   <div class="tableau-tastings">
+    <div class="row">
+      <div class="col-xs-4">
+        <p>Date</p>
+      </div>
+      <div class="col-xs-4">
+        <p>Nombre de places total</p>
+      </div>
+      <div class="col-xs-4">
+        <p>Actions</p>
+      </div>
+    </div>
     <% @tastings.each do |tasting| %>
       <div class="row">
         <div class="col-xs-4">
@@ -11,7 +22,12 @@
           <%= tasting.capacity %>
         </div>
         <div class="col-xs-4">
-          <%= link_to "Modifier", edit_tasting_path(tasting.id) %>
+          <%= link_to edit_tasting_path(tasting.id) do %>
+            <p>Modifier</p>
+          <% end %>
+          <%= link_to tasting_path(tasting.id), method: :delete, remote: true, data: { confirm: "Supprimer cette dégustation?" } do %>
+            <p>Supprimer</p>
+          <% end %>
         </div>
 
       </div>
@@ -19,6 +35,54 @@
   </div>
 
   <%= render 'tastings/new' %>
+
+  <h1>Brasseurs enregistrés</h1>
+  <div class="tableau-users">
+    <div class="row">
+      <div class="col-xs-4">
+        <p>e-mail</p>
+      </div>
+      <div class="col-xs-4">
+        <p>Brasseur certifié?</p>
+      </div>
+      <div class="col-xs-4">
+        <p>Certification</p>
+      </div>
+    </div>
+    <% User.all.each do |user| %>
+      <div class="row">
+        <div class="col-xs-4">
+          <%= user.email %>
+        </div>
+        <div class="col-xs-4">
+          <% if user.admin? %>
+           <p> oui </p>
+          <% else %>
+           <p> non </p>
+          <% end %>
+        </div>
+        <div class="col-xs-4">
+          <% if user.admin? %>
+           <%= link_to tastings_path do %>
+            <p> Déstituer </p>
+            <% user.admin = false %>
+            <% user.save %>
+           <% end %>
+          <% else %>
+           <%= link_to tastings_path do %>
+            <p> Promouvoir </p>
+            <% user.admin = true %>
+            <% user.save %>
+           <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tableau-guests">
+
+  </div>
 
 </div>
 

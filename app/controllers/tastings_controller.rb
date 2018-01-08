@@ -17,6 +17,9 @@ class TastingsController < ApplicationController
   def destroy
     @tasting = Tasting.find(params[:id])
     @tasting.destroy
+    if @tasting.destroy
+      redirect_to tastings_path
+    end
   end
 
   def show

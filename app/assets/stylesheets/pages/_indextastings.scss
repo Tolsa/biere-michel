@@ -1,5 +1,4 @@
 .index-tastings {
-  height: 100vh;
   z-index: 50;
   background-color: #FFF4E6;
   position: absolute;
@@ -18,10 +17,54 @@
   border: 1px solid $blue;
   .row {
     margin: 0px;
-
+    border-bottom: 1px solid $blue;
+  }
+  .row:last-child {
+    margin: 0px;
+    border-bottom: none;
   }
   .col-xs-4 {
     border-right: 1px solid $blue;
     padding: 10px;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    p:first-child {
+      margin-right: 30px;
+    }
+    p {
+      margin: 0px;
+    }
+  }
+
+  .col-xs-4:last-child {
+    border-right: none;
+  }
+}
+
+.tableau-users {
+  background-color: $white;
+  border: 1px solid $blue;
+  .row {
+    margin: 0px;
+    border-bottom: 1px solid $blue;
+  }
+  .row:last-child {
+    margin: 0px;
+    border-bottom: none;
+  }
+
+  .col-xs-6 {
+    border-right: 1px solid $blue;
+    padding: 10px;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    p:first-child {
+      margin-right: 30px;
+    }
+    p {
+      margin: 0px;
+    }
   }
 }
