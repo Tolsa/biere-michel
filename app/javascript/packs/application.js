@@ -10,4 +10,24 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
-// import '../inscription.js';
+import swal from 'sweetalert';
+
+function addPopupToSubmit () {
+  const boutonSubmit = document.querySelector("input[type='submit']")
+  boutonSubmit.addEventListener("click", (event) => {
+    event.preventDefault();
+    swal("On t'enverra un mail de confirmation, ça te va?", {
+      buttons: ["J'annule", "J'adhère"],
+    });
+    const OkButton = document.querySelectorAll(".swal-button")[1]
+    OkButton.addEventListener("click", (event) => {
+      const form = document.getElementById("new_guest")
+      form.submit()
+    });
+
+  });
+};
+
+
+addPopupToSubmit();
+

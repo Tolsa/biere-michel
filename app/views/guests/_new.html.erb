@@ -1,9 +1,9 @@
 <%= form_for @guest do |f| %>
   <p>
-    Guest firstname: <%= f.text_field :firstname %>
+    Prénom: <%= f.text_field :firstname %>
   </p>
   <p>
-      Guest lastname: <%= f.text_field :lastname %>
+      Nom: <%= f.text_field :lastname %>
   </p>
   <%= f.fields_for :participations, @participation do |participation_form| %>
     <%= participation_form.hidden_field :guest_id, :value => (Guest.last.id + 1) %>
