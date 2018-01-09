@@ -60,19 +60,40 @@ function displayEmails () {
       console.log(arrayEmails.join(', '))
       const stringEmails = arrayEmails.join(', ')
       swal(stringEmails, {
-        buttons: false,
-        title: "Liste d'emails pour envoi facile (copie-colle)",
+        buttons: {
+          text: "Clique sur les mails pour tous les sélectionner",
+          closeModal: false,
+        },
+        title: "Liste d'emails pour envoi groupé",
+      });
+      const selectMails = document.querySelector(".swal-text")
+      selectMails.addEventListener("click", (event) => {
+
+        function SelectText(element) {
+          let doc = document
+          let text = doc.querySelector(element)
+          let range
+          let selection
+          ;
+          if (doc.body.createTextRange) {
+              range = document.body.createTextRange();
+              range.moveToElementText(text);
+              range.select();
+          } else if (window.getSelection) {
+              selection = window.getSelection();
+              range = document.createRange();
+              range.selectNodeContents(text);
+              selection.removeAllRanges();
+              selection.addRange(range);
+          }
+        }
+        SelectText('.swal-text')
+
       });
     });
   };
 };
 
-// categories.forEach((category) => {
-// category.addEventListener("click", (event) => {
-//   event.currentTarget.classList.toggle("active");
-//   document.getElementById("go-forward2").classList.remove("no-go");
-// })
-// });
 
 
 

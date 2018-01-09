@@ -137,8 +137,31 @@
   margin: 22px;
   text-align: center;
   color: $blue;
+  cursor: copy;
 }
 
 .swal-overlay {
-  background-color: $blue;
+  background-color: rgba(25, 30, 37, 0.8);
+}
+
+.swal-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  background-color: white;
+  font-size: 12px;
+  color: #394351;
+  font-weight: normal;
+  position: relative;
+  cursor: inherit;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &:active {
+    background-color: white;
+  }
 }
