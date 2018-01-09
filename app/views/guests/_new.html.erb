@@ -6,11 +6,14 @@
       Nom: <%= f.text_field :lastname %>
   </p>
   <%= f.fields_for :participations, @participation do |participation_form| %>
-    <%= participation_form.hidden_field :guest_id, :value => (Guest.last.id + 1) %>
-    <p>
+    <% if Guest.last != nil %>
+      <%= participation_form.hidden_field :guest_id, :value => (Guest.last.id + 1) %>
+      <% else  %>
+      <%= participation_form.hidden_field :guest_id, :value => 1 %>
+    <% end %>
     <%= participation_form.hidden_field :tasting_id, :value => (Tasting.where(open: true).first.id) %>
   <% end %>
   <p>
-    <%= f.submit "s'enregistrer" %>
+    <%= f.submit "s'enregistrer", id: "inscription" %>
   </p>
 <% end %>

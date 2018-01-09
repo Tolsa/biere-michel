@@ -8,13 +8,14 @@
 p 'Destroying old database'
 Tasting.destroy_all
 User.destroy_all
+Guest.destroy_all
 
 
 
 p 'Fetching seed'
 tasting_attributes = [
 {
-  date: "25 janvier 2018 à 19h00",
+  date: "26 janvier 2018 à 19h00",
   capacity: 40
 },
 {
