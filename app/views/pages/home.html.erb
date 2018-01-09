@@ -56,6 +56,14 @@
   <div class="inscription">
     <div class="inscription-form">
       <!-- here we have to put a simple form for tasting -->
+      <h3>INSCRIPTION</h3>
+      <% if Participation.where(tasting_id: Tasting.where(open:true).first.id).count == Tasting.where(open:true).first.capacity %>
+      <p> Désolé, la soirée dégustation du <%= Tasting.where(open: true).first.date %> est complète ! </p>
+      <% else %>
+        <p>Inscrivez-vous pour la prochaine soirée dégustation du <%= Tasting.where(open: true).first.date %></p>
+
+        <%= render 'guests/new' %>
+      <% end %>
     </div>
   </div>
 
