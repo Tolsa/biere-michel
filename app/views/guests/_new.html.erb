@@ -1,5 +1,19 @@
-<%= simple_form_for(@guest) do |f| %>
-  <%= f.input :firstname, as: :string %>
-  <%= f.input :lastname, as: :string %>
-  <%= f.submit "Enregistrer" %>
+<%= form_for @guest do |f| %>
+  <p>
+    Guest firstname: <%= f.text_field :firstname %>
+  </p>
+  <p>
+      Guest lastname: <%= f.text_field :lastname %>
+  </p>
+  <%= f.fields_for :participations, @participation do |participation_form| %>
+    <p>
+      Guest_id: <%= participation_form.number_field :guest_id %>
+    </p>
+    <p>
+      tasting_id: <%= participation_form.number_field :tasting_id %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit "s'enregistrer" %>
+  </p>
 <% end %>
