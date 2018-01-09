@@ -72,10 +72,26 @@
     <% end %>
   </div>
 
+  <h1>Participants au prochain tasting</h1>
+  <h4>
+    <% targetTasting = Tasting.where(open: true).first %>
+    <%= targetTasting.date %>
+    -  <% places = (targetTasting.capacity - Participation.where(tasting_id: targetTasting.id).count) %>
+    <%= places %> places restantes
+  </h4>
   <div class="tableau-guests">
-
+    <div class="row">
+      <% targetTasting.participations.each do |p| %>
+        <div class="col-xs-6">
+          <%= p.guest.firstname %> <%= p.guest.lastname %>
+        </div>
+        <div class="col-xs-6">
+          <%= p.guest.email %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
+  <%= link_to "Retour à l'accueil", root_path %>
 </div>
 
 
