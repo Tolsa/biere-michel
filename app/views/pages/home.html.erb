@@ -56,7 +56,9 @@
   <div class="inscription">
     <div class="inscription-form">
       <!-- here we have to put a simple form for tasting -->
-
+      <h3>INSCRIPTION</h3>
+      <p>Inscrivez-vous pour le prochain brassage du <%= Tasting.where(open: true).first.date %></p>
+      <%= render 'guests/new' %>
     </div>
   </div>
 

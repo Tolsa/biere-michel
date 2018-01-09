@@ -46,6 +46,6 @@ class TastingsController < ApplicationController
   private
 
   def tasting_params
-    params.require(:tasting).permit(:date, :capacity)
+    params.require(:tasting).permit(:date, :capacity, :open)
   end
 end

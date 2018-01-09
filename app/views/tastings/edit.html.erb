@@ -1,9 +1,12 @@
-<div class="index-tastings">
+<div class="edit-tastings">
 
   <%= simple_form_for(@tasting) do |f| %>
     <%= f.input :date, as: :string, placeholder: @tasting.date  %>
     <%= f.input :capacity, as: :integer, placeholder: @tasting.capacity %>
+    <%= f.input :open, as: :boolean, checked_value: true, unchecked_value: false %>
     <%= f.button :submit %>
   <% end %>
+
+ <%= link_to "Retour à l'espace brasseur", tastings_path %>
 
 </div>

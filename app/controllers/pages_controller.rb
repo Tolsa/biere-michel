@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   end
 
   def home
+    @participation = Participation.new
+    @guest = Guest.new
   end
 
   def admin

@@ -23,7 +23,7 @@
     margin: 0px;
     border-bottom: none;
   }
-  .col-xs-4 {
+  .col-xs-3 {
     border-right: 1px solid $blue;
     padding: 10px;
     display: flex;
@@ -66,5 +66,20 @@
     p {
       margin: 0px;
     }
+  }
+}
+
+
+.edit-tastings {
+  z-index: 50;
+  height: 100vh;
+  background-color: #FFF4E6;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  padding: 17px 50px;
+
+  h1 {
+    color: $pink;
   }
 }

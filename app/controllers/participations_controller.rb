@@ -24,10 +24,6 @@ class ParticipationsController < ApplicationController
     @participation = Participation.find(params[:id])
   end
 
-  def edit
-    @participation = Participation.find(params[:id])
-  end
-
   def new
     @participation = Participation.new
   end
@@ -44,7 +40,7 @@ class ParticipationsController < ApplicationController
   private
 
   def participation_params
-    params.require(:participation).permit(:guest_id, :tasting_id)
+    params.require(:participation).permit(:guest_attributes => [:id, :first_name, :lastname], :tasting_attributes => [:id, :date])
   end
 end
 end
