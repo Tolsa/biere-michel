@@ -17,14 +17,24 @@ function addPopupToSubmit () {
   if (boutonSubmit) {
     boutonSubmit.addEventListener("click", (event) => {
       event.preventDefault();
-      swal("On t'enverra un mail de confirmation, ça te va?", {
-        buttons: ["J'annule", "J'adhère"],
-      });
-      const OkButton = document.querySelectorAll(".swal-button")[1]
-      OkButton.addEventListener("click", (event) => {
-        const form = document.querySelector('form')
-        form.submit()
-      });
+
+      const emailField = document.getElementById("guest_email")
+      if (emailField.value == "") {
+        swal("Oups, pas de mail, essaye encore!", {
+        buttons: false,
+        timer: 1500,
+        });
+      }
+      else {
+        swal("On t'enverra un mail de confirmation, ça te va?", {
+          buttons: ["J'annule", "J'adhère"],
+        });
+        const OkButton = document.querySelectorAll(".swal-button")[1]
+        OkButton.addEventListener("click", (event) => {
+          const form = document.querySelector('form')
+          form.submit()
+        });
+      }
 
     });
   };
