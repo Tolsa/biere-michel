@@ -12,6 +12,11 @@ console.log('Hello World from Webpacker')
 import 'bootstrap';
 import swal from 'sweetalert';
 
+addPopupToSubmit();
+displayEmails();
+
+// ------ LISTE DES FUNCTIONS CI DESSOUS //
+
 function addPopupToSubmit () {
   const boutonSubmit = document.getElementById("inscription")
   if (boutonSubmit) {
@@ -40,6 +45,35 @@ function addPopupToSubmit () {
   };
 };
 
+function displayEmails () {
+  const mailList = document.querySelector(".export-to-clipboard")
+  if (mailList) {
+    mailList.addEventListener("click", (event) => {
+      event.preventDefault();
+      const arrayEmails = [];
+      const cellsContent = document.querySelectorAll(".tableau-guests .col-xs-6");
+      cellsContent.forEach((cell) => {
+        if (cell.innerText.includes("@")) {
+          arrayEmails.push(cell.innerText)
+        }
+      });
+      console.log(arrayEmails.join(', '))
+      const stringEmails = arrayEmails.join(', ')
+      swal(stringEmails, {
+        buttons: false,
+        title: "Liste d'emails pour envoi facile (copie-colle)",
+      });
+    });
+  };
+};
 
-addPopupToSubmit();
+// categories.forEach((category) => {
+// category.addEventListener("click", (event) => {
+//   event.currentTarget.classList.toggle("active");
+//   document.getElementById("go-forward2").classList.remove("no-go");
+// })
+// });
+
+
+
 

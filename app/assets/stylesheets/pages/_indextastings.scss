@@ -80,7 +80,7 @@
   background-color: $white;
   border-top: 1px solid $blue;
   border-left: 1px solid $blue;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   .row {
     margin: 0px;
   }
@@ -104,6 +104,9 @@
   }
 }
 
+.export-to-clipboard {
+  margin-bottom: 50px;
+}
 
 .edit-tastings {
   z-index: 50;
@@ -117,4 +120,25 @@
   h1 {
     color: $pink;
   }
+}
+
+.swal-title {
+  margin: 0px;
+  font-size: 16px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+  margin-bottom: 28px;
+}
+
+.swal-text {
+  background-color: $peach;
+  padding: 17px;
+  border: 1px solid #F0E1A1;
+  display: block;
+  margin: 22px;
+  text-align: center;
+  color: $blue;
+}
+
+.swal-overlay {
+  background-color: $blue;
 }
