@@ -7,6 +7,7 @@ class ParticipationsController < ApplicationController
     @participation = Participation.new(participation_params)
     if @participation.save
       redirect_to root_path
+      raise
     else
       render :new
     end
@@ -40,7 +41,7 @@ class ParticipationsController < ApplicationController
   private
 
   def participation_params
-    params.require(:participation).permit(:guest_attributes => [:id, :first_name, :lastname], :tasting_attributes => [:id, :date])
+    params.require(:participation).permit(:guest_id, :tasting_attributes => [:id, :date])
   end
 end
 end

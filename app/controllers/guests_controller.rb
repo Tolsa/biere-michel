@@ -5,8 +5,12 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(guest_params)
-    if @guest.save
-      redirect_to guests_path
+    @guest.save
+    @participation = Participation.new
+    @participation.guest_id = params["guest"]["participations_attributes"]["0"]["guest_id"]
+    @participation.tasting_id = params["guest"]["participations_attributes"]["0"]["tasting_id"]
+    if @participation.save && @guest.save
+      redirect_to root_path
     else
       render :new
     end
@@ -32,7 +36,7 @@ class GuestsController < ApplicationController
   def update
     @guest = Guest.find(params[:id])
     if @guest.update(guest_params)
-      redirect_to guest_path(@guest)
+      redirect_to root_path
     else
       render :new
     end
@@ -41,6 +45,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:firstname, :lastname)
+    params.require(:guest).permit(:firstname, :lastname, :participation_attributes => [:id, :guest_id, :tasting_id])
   end
+
 end

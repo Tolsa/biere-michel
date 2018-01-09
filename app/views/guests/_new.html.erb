@@ -6,12 +6,9 @@
       Guest lastname: <%= f.text_field :lastname %>
   </p>
   <%= f.fields_for :participations, @participation do |participation_form| %>
+    <%= participation_form.hidden_field :guest_id, :value => (Guest.last.id + 1) %>
     <p>
-      Guest_id: <%= participation_form.number_field :guest_id %>
-    </p>
-    <p>
-      tasting_id: <%= participation_form.number_field :tasting_id %>
-    </p>
+    <%= participation_form.hidden_field :tasting_id, :value => (Tasting.where(open: true).first.id) %>
   <% end %>
   <p>
     <%= f.submit "s'enregistrer" %>
