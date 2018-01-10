@@ -16,6 +16,9 @@ class TastingsController < ApplicationController
 
   def destroy
     @tasting = Tasting.find(params[:id])
+    if Participation.where(tasting_id == @tasting_id).first != nil
+      Participation.where(tasting_id == @tasting_id).destroy_all
+    end
     @tasting.destroy
     if @tasting.destroy
       redirect_to tastings_path

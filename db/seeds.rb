@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 p 'Destroying old database'
+Participation.destroy_all
 Tasting.destroy_all
 User.destroy_all
 Guest.destroy_all
