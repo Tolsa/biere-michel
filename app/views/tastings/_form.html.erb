@@ -1,5 +1,5 @@
 <%= simple_form_for(@tasting) do |f| %>
   <%= f.input :date, as: :string %>
-  <%= f.input :capacity, as: :integer %>
-  <%= f.button :submit %>
+  <%= f.input :capacity, label: "Capacité", as: :integer %>
+  <%= f.button :submit, value: "Créer une dégustation" %>
 <% end %>

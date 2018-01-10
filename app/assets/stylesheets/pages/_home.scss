@@ -105,6 +105,7 @@ p {
     background-color: rgba(255, 244, 229,0.7);
     text-align: justify;
     display: flex;
+    align-items: center;
     width: 50%;
     min-width: 500px;
     justify-content: center;
@@ -141,7 +142,6 @@ p {
 .inscription {
   background: asset-url('inscription.jpg');
   background-size: cover;
-  height: 100vh;
   margin: 0px;
   width: 100%;
   padding: 32px;
@@ -201,8 +201,8 @@ p {
   padding-top: 50px;
   padding-bottom: 50px;
   .contact-button {
-    border: solid 4px #FF9789;
-    color: #FF9789;
+    border: solid 4px $pink;
+    color: $pink;
     font-family: "Roboto Condensed";
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -213,7 +213,7 @@ p {
 }
 
 .menu-admin {
-  border-top: 4px solid #FF9789;
+  border-top: 4px solid $pink;
   display: -webkit-box;
   padding: 20px;
   display: -ms-flexbox;
@@ -223,7 +223,7 @@ p {
   align-items: center;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  color: #394351;
+  color: $blue;
 }
 
 

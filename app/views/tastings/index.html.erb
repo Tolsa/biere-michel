@@ -1,7 +1,7 @@
 <% if current_user.admin? %>
 <div class="index-tastings">
 
-  <h1>Liste des tastings</h1>
+  <h1>Liste des dégustations prévues</h1>
   <div class="tableau-tastings">
     <div class="row">
       <div class="col-xs-3">
@@ -47,7 +47,7 @@
 
   <%= render 'tastings/new' %>
 
-  <h1>Participants au prochain tasting</h1>
+  <h1>Participants à la prochaine dégustation</h1>
   <% targetTasting = Tasting.where(open: true).first %>
   <% if targetTasting != nil %>
     <h4>

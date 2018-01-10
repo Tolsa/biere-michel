@@ -144,19 +144,21 @@ function displayEmails () {
 
 function checkEmail () {
   const emailTarget = document.getElementById('guest_email')
-  emailTarget.addEventListener("focusout", (event) => {
-    const str = emailTarget.value
-    if (str.includes('@')) {
-      return;
-    }
-    else {
-      swal("Oups, ton mail n'a pas l'air correct! Essaye encore...", {
-        buttons: false,
-        className: 'sweetalert-mailcheck',
-        timer: 2000,
-      });
-    }
-  });
+  if (emailTarget) {
+    emailTarget.addEventListener("focusout", (event) => {
+      const str = emailTarget.value
+      if (str.includes('@')) {
+        return;
+      }
+      else {
+        swal("Oups, ton mail n'a pas l'air correct! Essaye encore...", {
+          buttons: false,
+          className: 'sweetalert-mailcheck',
+          timer: 2000,
+        });
+      }
+    });
+  };
 };
 
 
