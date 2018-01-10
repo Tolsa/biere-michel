@@ -170,7 +170,17 @@ p {
         outline: 0px none;
         border-bottom: 1px solid #394351;
       }
+      // &:-webkit-autofill {
+      //   -webkit-box-shadow: 1 1 0px 1000px rgba(255, 244, 229,0.9) inset;
+      // }
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+          -webkit-transition-delay: 99999s;
+      }
     }
+
     #inscription {
       text-transform: uppercase;
       font-weight: bold;

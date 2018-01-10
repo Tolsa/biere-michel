@@ -15,6 +15,7 @@ import swal from 'sweetalert';
 addPopupToSubmit();
 displayEmails();
 scrollNav ();
+checkEmail ();
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
 
@@ -49,32 +50,42 @@ function scrollNav () {
 
 function addPopupToSubmit () {
   const boutonSubmit = document.getElementById("inscription")
+  const guestFirstname = document.getElementById("guest_firstname")
+  const guestLastname = document.getElementById("guest_lastname")
   if (boutonSubmit) {
     boutonSubmit.addEventListener("click", (event) => {
       event.preventDefault();
-
-      const emailField = document.getElementById("guest_email")
-      if (emailField.value == "") {
-        swal("Oups, pas de mail, essaye encore!", {
-        buttons: false,
-        className: 'sweetalert-mailcheck',
-        timer: 3000,
-        });
+      if (guestFirstname.value != "" && guestLastname.value != "") {
+        const emailField = document.getElementById("guest_email")
+        if (emailField.value == "") {
+          swal("Oups, pas de mail, essaye encore!", {
+          buttons: false,
+          className: 'sweetalert-mailcheck',
+          timer: 3000,
+          });
+        }
+        else {
+          swal("On t'enverra un mail de confirmation, ça te va?", {
+            buttons: ["J'annule", "J'adhère"],
+            className: 'sweetalert-confirm',
+          });
+          const OkButton = document.querySelectorAll(".swal-button")[1]
+          OkButton.addEventListener("click", (event) => {
+            const form = document.querySelector('form')
+            setTimeout(form.submit(), 4000);
+            swal("Votre inscription a bien été prise en compte", {
+              buttons: false,
+              className: 'sweetalert-confirm-2',
+              timer: 2000,
+            });
+          });
+        }
       }
       else {
-        swal("On t'enverra un mail de confirmation, ça te va?", {
-          buttons: ["J'annule", "J'adhère"],
-          className: 'sweetalert-confirm',
-        });
-        const OkButton = document.querySelectorAll(".swal-button")[1]
-        OkButton.addEventListener("click", (event) => {
-          const form = document.querySelector('form')
-          setTimeout(form.submit(), 4000);
-          swal("Votre inscription a bien été prise en compte", {
+        swal("Remplis bien tous les champs!", {
             buttons: false,
-            className: 'sweetalert-confirm-2',
-            timer: 2000,
-          });
+            className: 'sweetalert-mailcheck',
+            timer: 3000,
         });
       }
 
@@ -131,6 +142,22 @@ function displayEmails () {
   };
 };
 
+function checkEmail () {
+  const emailTarget = document.getElementById('guest_email')
+  emailTarget.addEventListener("focusout", (event) => {
+    const str = emailTarget.value
+    if (str.includes('@')) {
+      return;
+    }
+    else {
+      swal("Oups, ton mail n'a pas l'air correct! Essaye encore...", {
+        buttons: false,
+        className: 'sweetalert-mailcheck',
+        timer: 2000,
+      });
+    }
+  });
+};
 
 
 
