@@ -147,11 +147,39 @@ p {
   padding: 32px;
 
   .inscription-form {
-    background-color: rgba(255, 244, 229,0.7);
-    height: 80%;
+    background-color: rgba(255, 244, 229,0.9);
     width: 58%;
     min-width: 500px;
     margin: 20px 20px;
+    padding: 10px 30px;
+    h3 {
+      color: $pink;
+    }
+    p {
+      padding: 0px 5px;
+      color: $blue;
+    }
+  }
+
+  #new_guest {
+    input {
+      background-color: rgba(0,0,0,0);
+      border-color: rgba(0,0,0,0);
+      border-bottom: 1px solid $blue;
+      &:focus {
+        outline: 0px none;
+        border-bottom: 1px solid #394351;
+      }
+    }
+    #inscription {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border: 3px solid $pink;
+      color: $pink;
+      font-size: 24px;
+      margin-top: 20px;
+    }
   }
 }
 
