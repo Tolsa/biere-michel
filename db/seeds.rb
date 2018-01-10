@@ -7,23 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p 'Destroying old database'
 Participation.destroy_all
-Tasting.destroy_all
 User.destroy_all
 Guest.destroy_all
 
-
+Tasting.delete_all
 
 p 'Fetching seed'
-tasting_attributes = [
-{
-  date: "26 janvier 2018 à 19h00",
-  capacity: 40
-},
-{
-  date: "12 fevrier 2018 à 20h00",
-  capacity: 35
-}
-]
+  tasting_attributes = [
+  {
+    date: "26 janvier 2018 à 19h00",
+    capacity: 40
+  },
+  {
+    date: "12 fevrier 2018 à 20h00",
+    capacity: 35
+  }
+  ]
+  Tasting.create!(tasting_attributes)
 
-Tasting.create!(tasting_attributes)
 p 'done'
