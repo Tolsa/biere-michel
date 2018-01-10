@@ -44,4 +44,3 @@ class ParticipationsController < ApplicationController
     params.require(:participation).permit(:guest_id, :tasting_attributes => [:id, :date])
   end
 end
-end
