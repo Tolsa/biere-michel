@@ -57,12 +57,14 @@ function addPopupToSubmit () {
       if (emailField.value == "") {
         swal("Oups, pas de mail, essaye encore!", {
         buttons: false,
-        timer: 1500,
+        className: 'sweetalert-mailcheck',
+        timer: 3000,
         });
       }
       else {
         swal("On t'enverra un mail de confirmation, ça te va?", {
           buttons: ["J'annule", "J'adhère"],
+          className: 'sweetalert-confirm',
         });
         const OkButton = document.querySelectorAll(".swal-button")[1]
         OkButton.addEventListener("click", (event) => {

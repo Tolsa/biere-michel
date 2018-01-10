@@ -187,3 +187,36 @@ p {
   justify-content: space-around;
   color: #394351;
 }
+
+
+.sweetalert-mailcheck {
+  background-color: $peach;
+  .swal-text {
+    cursor: initial;
+    border: none;
+  }
+}
+
+.sweetalert-confirm {
+  background-color: $peach;
+  .swal-text {
+    cursor: initial;
+    border: none;
+  }
+  .swal-footer {
+    display: flex;
+    justify-content: center;
+  }
+  .swal-button--cancel {
+    background-color: lightgray;
+    font-size: 15px;
+    cursor: pointer;
+    color: rgba(57, 67, 81, 0.7);
+  }
+  .swal-button--confirm {
+    background-color: $blue;
+    font-size: 15px;
+    cursor: pointer;
+    color: $white;
+  }
+}
