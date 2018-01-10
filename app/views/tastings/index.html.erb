@@ -48,29 +48,37 @@
   <%= render 'tastings/new' %>
 
   <h1>Participants au prochain tasting</h1>
-  <h4>
-    <% targetTasting = Tasting.where(open: true).first %>
-    <%= targetTasting.date %>
-    -  <% places = (targetTasting.capacity - Participation.where(tasting_id: targetTasting.id).count) %>
-    <%= places %> places restantes
-  </h4>
-  <div class="tableau-guests">
-    <div class="row">
-      <% targetTasting.participations.each do |p| %>
-        <div class="col-xs-6">
-          <%= p.guest.firstname %> <%= p.guest.lastname %>
-        </div>
-        <div class="col-xs-6">
-          <%= p.guest.email %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="export-to-clipboard">
+  <% targetTasting = Tasting.where(open: true).first %>
+  <% if targetTasting != nil %>
     <h4>
-      <%= link_to "Afficher la liste des mails" %>
+        <%= targetTasting.date %>
+        -  <% places = (targetTasting.capacity - Participation.where(tasting_id: targetTasting.id).count) %>
+        <%= places %> places restantes
     </h4>
-  </div>
+    <% if targetTasting.participations.first != nil %>
+      <div class="tableau-guests">
+        <div class="row">
+          <% targetTasting.participations.each do |p| %>
+            <div class="col-xs-6">
+              <%= p.guest.firstname %> <%= p.guest.lastname %>
+            </div>
+            <div class="col-xs-6">
+              <%= p.guest.email %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="export-to-clipboard">
+        <h4>
+          <%= link_to "Afficher la liste des mails" %>
+        </h4>
+      </div>
+    <% else %>
+      <p> Aucun inscrits pour le moment</p>
+    <% end %>
+  <% else %>
+    Aucune dégustation ouverte pour le moment
+  <% end %>
 
   <h1>Brasseurs enregistrés</h1>
   <div class="tableau-users">
