@@ -51,6 +51,7 @@
 .tableau-users {
   background-color: $white;
   border: 1px solid $blue;
+  margin-bottom: 50px;
   .row {
     margin: 0px;
     border-bottom: 1px solid $blue;
@@ -164,4 +165,8 @@
   &:active {
     background-color: white;
   }
+}
+
+#fail-brasseur {
+  height: 100vh;
 }

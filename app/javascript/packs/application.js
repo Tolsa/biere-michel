@@ -14,8 +14,38 @@ import swal from 'sweetalert';
 
 addPopupToSubmit();
 displayEmails();
-
+scrollNav ();
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
+
+
+function scrollNav () {
+  const whoAreWe = document.getElementById('who-button')
+  if (whoAreWe){
+    whoAreWe.addEventListener("click", (event) => {
+      event.preventDefault();
+      var scrollTo = jQuery('#who-are-we').offset().top;
+      jQuery('body, html').animate({scrollTop: scrollTo}, 800);
+    });
+  };
+
+  const brassage = document.getElementById('what-button')
+  if (brassage){
+    brassage.addEventListener("click", (event) => {
+      event.preventDefault();
+      var scrollTo = jQuery('#the-brew').offset().top;
+      jQuery('body, html').animate({scrollTop: scrollTo}, 800);
+    });
+  };
+
+  const degustation = document.getElementById('when-button')
+  if (degustation){
+    degustation.addEventListener("click", (event) => {
+      event.preventDefault();
+      var scrollTo = jQuery('#tasting').offset().top;
+      jQuery('body, html').animate({scrollTop: scrollTo}, 800);
+    });
+  };
+};
 
 function addPopupToSubmit () {
   const boutonSubmit = document.getElementById("inscription")
