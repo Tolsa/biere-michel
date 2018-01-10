@@ -220,3 +220,14 @@ p {
     color: $white;
   }
 }
+
+.sweetalert-confirm-2 {
+  background-color: $peach;
+  .swal-text {
+    cursor: initial;
+    border: none;
+    background-color: $peach;
+    color: $blue;
+    font-size: 20px
+  }
+}

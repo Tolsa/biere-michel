@@ -69,7 +69,12 @@ function addPopupToSubmit () {
         const OkButton = document.querySelectorAll(".swal-button")[1]
         OkButton.addEventListener("click", (event) => {
           const form = document.querySelector('form')
-          form.submit()
+          setTimeout(form.submit(), 4000);
+          swal("Votre inscription a bien été prise en compte", {
+            buttons: false,
+            className: 'sweetalert-confirm-2',
+            timer: 2000,
+          });
         });
       }
 
