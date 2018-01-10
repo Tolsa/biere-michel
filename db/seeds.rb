@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p 'Destroying old database'
 Participation.destroy_all
-User.destroy_all
 Guest.destroy_all
 
 Tasting.delete_all
