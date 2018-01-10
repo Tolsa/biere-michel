@@ -15,6 +15,7 @@ gem 'figaro'
 gem 'cloudinary'
 gem 'devise'
 gem 'pundit'
+gem 'jquery-rails'
 
 
 
