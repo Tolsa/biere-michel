@@ -29,6 +29,9 @@
     margin-bottom: 10px;
     text-shadow: 1px 1px 20px rgba(33,33,33,0.6),
     -1px -1px 20px rgba(33,33,33,0.6);
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 45px;
+    }
   }
 
   h2 {
@@ -39,6 +42,10 @@
     margin: 0px;
     text-shadow: 1px 1px 20px rgba(33,33,33,0.6),
     -1px -1px 20px rgba(33,33,33,0.6);
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 24px;
+      letter-spacing: 3.2px;
+    }
   }
 }
 
@@ -50,11 +57,20 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 31px;
+  @media (min-width: 300px) and (max-width: 700px) {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
 }
 
 p {
   color: $blue;
   letter-spacing: 3px;
+  @media (min-width: 300px) and (max-width: 700px) {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
 }
 
 #who-are-we {
@@ -62,9 +78,15 @@ p {
   padding-top: 50px;
   flex-direction: column;
   align-items: center;
+  @media (min-width: 300px) and (max-width: 700px) {
+    padding-top: 10px;
+  }
 
   p {
     width: 50%;
+    @media (min-width: 300px) and (max-width: 700px) {
+     width: 80%;
+    }
 
   }
 
@@ -73,10 +95,22 @@ p {
     flex-flow: row wrap;
     justify-content: space-around;
     margin-bottom: 60px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      padding: 0px 20px;
+      margin-bottom: 30px;
+    }
+    img {
+      @media (min-width: 300px) and (max-width: 700px) {
+       width: 75px;
+      }
+    }
   }
 
   .item-crew {
     padding: 22px 22px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      padding: 10px 10px;
+    }
   }
 }
 
@@ -100,6 +134,12 @@ p {
     justify-content: center;
     padding: 0px 40px;
     margin-top: 50px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      height: 45px;
+      letter-spacing: 1px;
+      width: 249px;
+      padding: 0px;
+    }
   }
   .brew-content {
     background-color: rgba(255, 244, 229,0.9);
@@ -109,6 +149,11 @@ p {
     min-width: 500px;
     width: 50%;
     margin-bottom: 60px;
+
+    @media (min-width: 300px) and (max-width: 700px) {
+      width: unset;
+      min-width: unset;
+    }
     p {
       text-align: justify;
       padding: 40px 40px;
@@ -125,6 +170,9 @@ p {
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  @media (min-width: 300px) and (max-width: 700px) {
+    padding-top: 10px;
+  }
   .gmaps {
     background-image: asset-url('st-mich.jpg');
     height: 400px;
@@ -140,6 +188,11 @@ p {
     width: 50%;
     margin-bottom: 40px;
     margin-top: 40px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      width: 60%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -149,6 +202,10 @@ p {
   margin: 0px;
   width: 100%;
   padding: 32px;
+  @media (min-width: 300px) and (max-width: 700px) {
+    padding: 10px;
+    background-position: center;
+  }
 
   .inscription-form {
     background-color: rgba(255, 244, 229,0.9);
@@ -156,8 +213,15 @@ p {
     min-width: 500px;
     margin: 20px 20px;
     padding: 10px 30px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      min-width: unset;
+      width: unset;
+    }
     h3 {
       color: $pink;
+      @media (min-width: 300px) and (max-width: 700px) {
+        margin-top: 15px;
+      }
     }
     p {
       padding: 0px 5px;
@@ -193,6 +257,11 @@ p {
       color: $pink;
       font-size: 24px;
       margin-top: 20px;
+      @media (min-width: 300px) and (max-width: 700px) {
+        border: 2px solid $pink;
+        font-size: 16px;
+        margin-top: 9px;
+      }
     }
   }
 }
@@ -204,6 +273,10 @@ p {
   align-items: center;
   padding-top: 50px;
   padding-bottom: 50px;
+  @media (min-width: 300px) and (max-width: 700px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   .contact-button {
     border: solid 4px $pink;
     color: $pink;
@@ -213,6 +286,10 @@ p {
     font-weight: normal;
     padding: 4px 12px;
     font-size: 34px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      border: 2px solid $pink;
+      font-size: 16px;
+    }
   }
 }
 
@@ -228,6 +305,17 @@ p {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   color: $blue;
+  @media (min-width: 300px) and (max-width: 700px) {
+    border-top: 2px solid $pink;
+    font-size: 16px;
+    padding: 10px;
+  }
+  a {
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 10px;
+      padding: 15px;
+    }
+  }
 }
 
 

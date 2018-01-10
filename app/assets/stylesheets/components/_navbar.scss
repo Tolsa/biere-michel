@@ -4,6 +4,10 @@
   p {
     color: $white;
     cursor: pointer;
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
   }
   width: 100%;
   justify-content: space-around;
