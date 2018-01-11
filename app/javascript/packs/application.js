@@ -225,12 +225,16 @@ function fillingHiddenForm () {
         contactEmail.value = popupField2.value
         contactName.value = popupField1.value
         const form2 = document.getElementById('new_contact')
-        form2.submit()
+        swal("Message envoyé!", {
+          buttons: false,
+          className: 'sweetalert-confirm-2',
+        });
+        form2.submit();
       }
       else {
         swal("Oups, tu n'as pas rempli tous les champs", {
           buttons: false,
-          className: 'sweetalert-mailcheck',
+          className: 'sweetalert-mailsent',
           showCancelButton: true,
           showConfirmButton: false,
         });
@@ -238,6 +242,7 @@ function fillingHiddenForm () {
     });
   }
 }
+
 
 
 
