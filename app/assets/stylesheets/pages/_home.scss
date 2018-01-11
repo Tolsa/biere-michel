@@ -364,3 +364,13 @@ p {
     font-size: 20px
   }
 }
+
+
+.sweetalert-mailsent {
+  background-color: $peach;
+  opacity: 1;
+  .swal-text {
+    cursor: initial;
+    border: none;
+  }
+}
