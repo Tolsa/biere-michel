@@ -82,6 +82,47 @@
   }
 }
 
+.tableau-messages {
+  background-color: $white;
+  border: 1px solid $blue;
+  border-right: none;
+  .row {
+    margin: 0px;
+  }
+  .col-xs-6 {
+    border-right: 1px solid #394351;
+    display: flex;
+    min-height: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #394351;
+    overflow: scroll;
+    p {
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 14px;
+    }
+  }
+  .col-xs-12 {
+    margin: 0px;
+    padding: 5px;
+    background-color: white;
+    border-right: 1px solid #394351;
+    border-bottom: 1px solid #394351;
+    &:last-child{
+      border-bottom: none;
+    }
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 14px;
+    }
+  }
+}
+
+
 .tableau-users {
   background-color: $white;
   border: 1px solid $blue;
@@ -155,7 +196,7 @@
 }
 
 .export-to-clipboard {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .edit-tastings {
