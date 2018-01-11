@@ -18,6 +18,7 @@ scrollNav();
 checkEmail();
 contactUs();
 closeContact();
+fillingHiddenForm();
 
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
@@ -175,7 +176,6 @@ function checkEmail () {
   };
 };
 
-
 function contactUs () {
   const contactButton = document.querySelector('.contact-button')
   const contactPopup = document.getElementById('contact-popup')
@@ -189,7 +189,6 @@ function contactUs () {
     });
   }
 }
-
 
 function closeContact (){
   const closeContactCross = document.querySelector('.close-btn')
@@ -209,7 +208,36 @@ function closeContact (){
   }
 }
 
-
+function fillingHiddenForm () {
+  const popupField1 = document.getElementById('popup-field1')
+  const popupField2 = document.getElementById('popup-field2')
+  const popupField3 = document.getElementById('popup-field3')
+  const contactName = document.getElementById('contact_name')
+  const contactEmail = document.getElementById('contact_email')
+  const contactMessage = document.getElementById('contact_message')
+  const sendPopup = document.getElementById('close-popup')
+  if (sendPopup) {
+    sendPopup.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log('coucou');
+      if (popupField3.value != "" && popupField2.value != ""){
+        contactMessage.value = popupField3.value
+        contactEmail.value = popupField2.value
+        contactName.value = popupField1.value
+        const form2 = document.getElementById('new_contact')
+        form2.submit()
+      }
+      else {
+        swal("Oups, tu n'as pas rempli tous les champs", {
+          buttons: false,
+          className: 'sweetalert-mailcheck',
+          showCancelButton: true,
+          showConfirmButton: false,
+        });
+      }
+    });
+  }
+}
 
 
 
