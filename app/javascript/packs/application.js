@@ -17,6 +17,7 @@ displayEmails();
 scrollNav();
 checkEmail();
 contactUs();
+closeContact();
 
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
@@ -180,14 +181,15 @@ function contactUs () {
   const contactPopup = document.getElementById('contact-popup')
   if (contactButton) {
     contactButton.addEventListener("click", (event) =>{
-      contactPopup.style.opacity=1;
-      contactPopup.style.display = "unset";
-      contactPopup.style["z-index"] = '100';
-      closeContact ()
+      contactPopup.style["opacity"] = 1;
+      if (contactPopup.style["opacity"] == 1) {
+        contactPopup.style.display = "unset";
+        contactPopup.style["z-index"] = '100';
+      }
     });
   }
-
 }
+
 
 function closeContact (){
   const closeContactCross = document.querySelector('.close-btn')
@@ -201,9 +203,6 @@ function closeContact (){
           setTimeout(function() {
             contactPopup.style.display='none';
             contactPopup.style["z-index"] = '-50';}, 1000);
-      }
-      else {
-          $('#contact-popup').animate({opacity:1}, 700);
       }
 
     })
