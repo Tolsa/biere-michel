@@ -80,6 +80,32 @@
     Aucune dégustation ouverte pour le moment
   <% end %>
 
+  <h1>Messages reçus</h1>
+  <div class="tableau-messages">
+    <div class="row">
+      <% if Contact.first != nil %>
+        <% allMessages = Contact.all %>
+        <% allMessages.each do |m| %>
+          <div class="col-xs-6">
+            <% if m.name? %>
+              <p>Nom: </p>
+              <%= m.name %>
+            <% end %>
+          </div>
+          <div class="col-xs-6">
+            <p>E-mail: </p>
+            <%= m.email %>
+          </div>
+          <div class="col-xs-12">
+            <%= m.message %>
+          </div>
+        <% end %>
+      <% else %>
+        Aucun message pour le moment
+      <% end %>
+    </div>
+  </div>
+
   <h1>Brasseurs enregistrés</h1>
   <div class="tableau-users">
     <div class="row">

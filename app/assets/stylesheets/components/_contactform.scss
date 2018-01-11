@@ -13,6 +13,9 @@
     display: flex;
     flex-direction: column;
   }
+  input {
+    font-size: 16px;
+  }
 }
 
 #popup-field1 {
@@ -40,9 +43,24 @@
 }
 
 #close-popup {
-
+  @media (min-width: 300px) and (max-width: 700px) {
+    width: 250px;
+    font-size: 16px;
+    background-color: rgba(57, 67, 81, 0);
+    color: $white;
+    border: 1px solid $white;
+    height: 45px;
+  }
 }
 
 .close-btn {
- color: $white;
+  color: $white;
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
