@@ -174,6 +174,10 @@ function checkEmail () {
 };
 
 
+// function closeContact (){
+//   const contactForm =
+// }
+
 
 
 
