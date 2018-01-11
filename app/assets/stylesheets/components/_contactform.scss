@@ -1,0 +1,47 @@
+#contact-popup {
+  background-color: rgba(57, 67, 81, 0.95);
+  position: absolute;
+  bottom: 0px;
+  z-index: 50;
+  width: 100%;
+  padding: 20px;
+  h4 {
+    color: $white;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#popup-field1 {
+  margin-bottom: 10px;
+  width: 200px;
+  padding: 5px;
+  background-color: $peach;
+  color: $blue;
+}
+
+#popup-field2 {
+  margin-bottom: 10px;
+  width: 200px;
+  padding: 5px;
+  background-color: $peach;
+  color: $blue;
+}
+
+#popup-field3 {
+  margin-bottom: 10px;
+  height: 100px;
+  padding: 5px;
+  background-color: $peach;
+  color: $blue;
+}
+
+#close-popup {
+
+}
+
+.close-btn {
+ color: $white;
+}

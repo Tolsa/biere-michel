@@ -16,9 +16,13 @@ addPopupToSubmit();
 displayEmails();
 scrollNav ();
 checkEmail ();
+closePopup ();
+
+
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
-
+// === Pour permettre de descendre dans la page
+// en cliquant sur la navbar === //
 function scrollNav () {
   const whoAreWe = document.getElementById('who-button')
   if (whoAreWe){
@@ -48,6 +52,8 @@ function scrollNav () {
   };
 };
 
+// === Contrôle de saisie et parcours
+// utilisateur lors du submit inscription === //
 function addPopupToSubmit () {
   const boutonSubmit = document.getElementById("inscription")
   const guestFirstname = document.getElementById("guest_firstname")
@@ -104,6 +110,8 @@ function addPopupToSubmit () {
   };
 };
 
+// === Pop up avec tous les emails dans un format
+// OK pour copier-coller en cc d'un email === //
 function displayEmails () {
   const mailList = document.querySelector(".export-to-clipboard")
   if (mailList) {
@@ -153,6 +161,7 @@ function displayEmails () {
   };
 };
 
+// === Contrôle de saisie d'email === //
 function checkEmail () {
   const emailTarget = document.getElementById('guest_email')
   if (emailTarget) {
@@ -172,6 +181,40 @@ function checkEmail () {
     });
   };
 };
+
+
+// === Fonctionnement du formulaire de contact === //
+function contactForm () {
+  const contactButton = document.querySelector(".contact-button")
+  if (contactButton) {
+    contactButton.addEventListener("click", (event) => {
+      // swal({
+      //   title: 'Multiple inputs',
+      //   html: true,
+      //   content: 'input',
+      //   focusConfirm: false,
+      //   preConfirm: () => {
+      //     return [
+      //       $('#swal-input1').val(),
+      //       $('#swal-input2').val(),
+      //       $('#swal-input3').val(),
+      //     ]
+      //   }
+      // })
+    });
+  }
+
+}
+
+function closePopup () {
+  const contactPopup = document.getElementById('contact-popup')
+  const closeBtn = document.querySelector('.close-btn')
+  if (closeBtn) {
+    closeBtn.addEventListener("click", (event) => {
+      contactPopup.style.cssText = 'display: none; transition: 1s ease-in;';
+    });
+  }
+}
 
 
 

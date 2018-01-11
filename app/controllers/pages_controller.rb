@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   def home
     @participation = Participation.new
     @guest = Guest.new
+    @contact = Contact.new
   end
 
   def admin

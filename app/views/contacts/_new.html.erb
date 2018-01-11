@@ -1,0 +1,6 @@
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.hidden_field :name, label: "Ton nom", as: :string %>
+  <%= f.hidden_field :email, as: :string %>
+  <%= f.hidden_field :message, as: :string %>
+  <%= f.button :submit, style: "display: none;", value: "Envoyer aux brasseurs" %>
+<% end %>
