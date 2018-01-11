@@ -8,21 +8,15 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
-console.log('coucoucocucoucou')
 import 'bootstrap';
 import swal from 'sweetalert';
 
 
-if (typeof jQuery != 'undefined') {
-    // jQuery is loaded => print the version
-    alert(jQuery.fn.jquery);
-}
 addPopupToSubmit();
 displayEmails();
 scrollNav();
 checkEmail();
-
-
+contactUs();
 
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
@@ -181,9 +175,41 @@ function checkEmail () {
 };
 
 
-// function closeContact (){
-//   const contactForm =
-// }
+function contactUs () {
+  const contactButton = document.querySelector('.contact-button')
+  const contactPopup = document.getElementById('contact-popup')
+  if (contactButton) {
+    contactButton.addEventListener("click", (event) =>{
+      contactPopup.style.opacity=1;
+      contactPopup.style.display = "unset";
+      contactPopup.style["z-index"] = '100';
+      closeContact ()
+    });
+  }
+
+}
+
+function closeContact (){
+  const closeContactCross = document.querySelector('.close-btn')
+  const contactPopup = document.getElementById('contact-popup')
+  if (closeContactCross) {
+    closeContactCross.addEventListener("click", (event) => {
+      if ($('#contact-popup').css('opacity') == 1){
+
+
+          $('#contact-popup').animate({opacity:0}, 700);
+          setTimeout(function() {
+            contactPopup.style.display='none';
+            contactPopup.style["z-index"] = '-50';}, 1000);
+      }
+      else {
+          $('#contact-popup').animate({opacity:1}, 700);
+      }
+
+    })
+  }
+}
+
 
 
 

@@ -2,7 +2,8 @@
   background-color: rgba(57, 67, 81, 0.95);
   position: absolute;
   bottom: 0px;
-  z-index: 50;
+  z-index: -10;
+  display: none;
   width: 100%;
   padding: 20px;
   h4 {
