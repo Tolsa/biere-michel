@@ -73,11 +73,22 @@ function addPopupToSubmit () {
           OkButton.addEventListener("click", (event) => {
             const form = document.querySelector('form')
             setTimeout(form.submit(), 4000);
-            swal("Votre inscription a bien été prise en compte", {
-              buttons: false,
-              className: 'sweetalert-confirm-2',
-              timer: 2000,
-            });
+            const regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+            const emailField = document.getElementById('guest_email').value
+            if (emailField.match(regex)) {
+              swal("Ton inscription a bien été prise en compte", {
+                buttons: false,
+                className: 'sweetalert-confirm-2',
+                timer: 2000,
+              });
+            }
+            else {
+              swal("Désolé, tu n'as pas bien renseigné tous les champs", {
+                buttons: false,
+                className: 'sweetalert-confirm-2',
+                timer: 2000,
+              });
+            }
           });
         }
       }
@@ -147,7 +158,8 @@ function checkEmail () {
   if (emailTarget) {
     emailTarget.addEventListener("focusout", (event) => {
       const str = emailTarget.value
-      if (str.includes('@')) {
+      const regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+      if (str.match(regex)) {
         return;
       }
       else {
