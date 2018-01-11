@@ -8,8 +8,15 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
+console.log('coucoucocucoucou')
 import 'bootstrap';
 import swal from 'sweetalert';
+
+
+if (typeof jQuery != 'undefined') {
+    // jQuery is loaded => print the version
+    alert(jQuery.fn.jquery);
+}
 addPopupToSubmit();
 displayEmails();
 scrollNav();
