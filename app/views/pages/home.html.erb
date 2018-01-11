@@ -80,6 +80,19 @@
     <div class="contact-button">
       Nous contacter
     </div>
+    <%= render 'contacts/new' %>
+    <div id="contact-popup">
+      <div class="close-btn">
+        X
+      </div>
+      <h4>Envoyez nous un message ici :</h4>
+      <form>
+        <input type="text" name="contact-name" id="popup-field1" placeholder="Ton nom"/>
+        <input type="text" name="contact-email" id="popup-field2" placeholder="Email"/>
+        <textarea name="contact-message" id="popup-field3" placeholder="Ecris ici ton message"></textarea>
+        <input type="submit" id="close-popup" value="Envoyer le message" />
+      </form>
+    </div>
   </div>
 
   <div class="menu-admin">

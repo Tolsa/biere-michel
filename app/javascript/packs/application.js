@@ -8,16 +8,19 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
-
 import 'bootstrap';
 import swal from 'sweetalert';
 
+
 addPopupToSubmit();
 displayEmails();
-scrollNav ();
-checkEmail ();
-// ------ LISTE DES FUNCTIONS CI DESSOUS //
+scrollNav();
+checkEmail();
+contactUs();
+closeContact();
+fillingHiddenForm();
 
+// ------ LISTE DES FUNCTIONS CI DESSOUS //
 
 function scrollNav () {
   const whoAreWe = document.getElementById('who-button')
@@ -73,11 +76,22 @@ function addPopupToSubmit () {
           OkButton.addEventListener("click", (event) => {
             const form = document.querySelector('form')
             setTimeout(form.submit(), 4000);
-            swal("Votre inscription a bien été prise en compte", {
-              buttons: false,
-              className: 'sweetalert-confirm-2',
-              timer: 2000,
-            });
+            const regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+            const emailField = document.getElementById('guest_email').value
+            if (emailField.match(regex)) {
+              swal("Ton inscription a bien été prise en compte", {
+                buttons: false,
+                className: 'sweetalert-confirm-2',
+                timer: 2000,
+              });
+            }
+            else {
+              swal("Désolé, tu n'as pas bien renseigné tous les champs", {
+                buttons: false,
+                className: 'sweetalert-confirm-2',
+                timer: 2000,
+              });
+            }
           });
         }
       }
@@ -147,7 +161,8 @@ function checkEmail () {
   if (emailTarget) {
     emailTarget.addEventListener("focusout", (event) => {
       const str = emailTarget.value
-      if (str.includes('@')) {
+      const regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+      if (str.match(regex)) {
         return;
       }
       else {
@@ -160,6 +175,70 @@ function checkEmail () {
     });
   };
 };
+
+function contactUs () {
+  const contactButton = document.querySelector('.contact-button')
+  const contactPopup = document.getElementById('contact-popup')
+  if (contactButton) {
+    contactButton.addEventListener("click", (event) =>{
+      contactPopup.style["opacity"] = 1;
+      if (contactPopup.style["opacity"] == 1) {
+        contactPopup.style.display = "unset";
+        contactPopup.style["z-index"] = '100';
+      }
+    });
+  }
+}
+
+function closeContact (){
+  const closeContactCross = document.querySelector('.close-btn')
+  const contactPopup = document.getElementById('contact-popup')
+  if (closeContactCross) {
+    closeContactCross.addEventListener("click", (event) => {
+      if ($('#contact-popup').css('opacity') == 1){
+
+
+          $('#contact-popup').animate({opacity:0}, 700);
+          setTimeout(function() {
+            contactPopup.style.display='none';
+            contactPopup.style["z-index"] = '-50';}, 1000);
+      }
+
+    })
+  }
+}
+
+function fillingHiddenForm () {
+  const popupField1 = document.getElementById('popup-field1')
+  const popupField2 = document.getElementById('popup-field2')
+  const popupField3 = document.getElementById('popup-field3')
+  const contactName = document.getElementById('contact_name')
+  const contactEmail = document.getElementById('contact_email')
+  const contactMessage = document.getElementById('contact_message')
+  const sendPopup = document.getElementById('close-popup')
+  if (sendPopup) {
+    sendPopup.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log('coucou');
+      if (popupField3.value != "" && popupField2.value != ""){
+        contactMessage.value = popupField3.value
+        contactEmail.value = popupField2.value
+        contactName.value = popupField1.value
+        const form2 = document.getElementById('new_contact')
+        form2.submit()
+      }
+      else {
+        swal("Oups, tu n'as pas rempli tous les champs", {
+          buttons: false,
+          className: 'sweetalert-mailcheck',
+          showCancelButton: true,
+          showConfirmButton: false,
+        });
+      }
+    });
+  }
+}
+
 
 
 
