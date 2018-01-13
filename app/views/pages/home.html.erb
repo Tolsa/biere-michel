@@ -65,6 +65,28 @@
           <p> Désolé, la soirée dégustation du <%= Tasting.where(open: true).first.date %> est complète ! </p>
           <% else %>
             <p>Inscrivez-vous pour la prochaine soirée dégustation du <%= Tasting.where(open: true).first.date %></p>
+            <div class="bierdisplay">
+              <% if Tasting.where(open: true).first.ambree? %>
+                <h3 class="display-true">ambree</h3>
+              <% else %>
+                <h3 class="display-false">ambree</h3>
+              <% end %>
+              <% if Tasting.where(open: true).first.ipa? %>
+                <h3 class="display-true">ipa</h3>
+              <% else %>
+                <h3 class="display-false">ipa</h3>
+              <% end %>
+              <% if Tasting.where(open: true).first.surprise? %>
+                <h3 class="display-true">surprise</h3>
+              <% else %>
+                <h3 class="display-false">surprise</h3>
+              <% end %>
+              <% if Tasting.where(open: true).first.blonde? %>
+                <h3 class="display-true">blonde</h3>
+              <% else %>
+                <h3 class="display-false">blonde</h3>
+              <% end %>
+            </div>
 
             <%= render 'guests/new' %>
           <% end %>
