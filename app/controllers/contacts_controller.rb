@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
     @contacts = Contact.all
   end
@@ -7,8 +9,6 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       redirect_to root_path
-    else
-      render :new
     end
   end
 
@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @contact.destroy
     if @contact.destroy
-      redirect_to root_path
+      redirect_to tastings_path
     end
   end
 
