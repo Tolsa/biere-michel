@@ -1,9 +1,17 @@
 <div class="edit-tastings">
 
   <%= simple_form_for(@tasting) do |f| %>
+    <h3>Modifier la dégustation</h3>
     <%= f.input :date, as: :string, placeholder: @tasting.date  %>
     <%= f.input :capacity, as: :integer, placeholder: @tasting.capacity %>
     <%= f.input :open, as: :boolean, checked_value: true, unchecked_value: false %>
+    <h3>Liste des bières proposées :</h3>
+    <div class="bierlist">
+      <%= f.input :ipa, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :ambree, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :surprise, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :blonde, as: :boolean, checked_value: true, unchecked_value: false %>
+    </div>
     <%= f.button :submit %>
   <% end %>
 
