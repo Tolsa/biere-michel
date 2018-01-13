@@ -205,7 +205,6 @@
 
 .edit-tastings {
   z-index: 50;
-  height: 100vh;
   background-color: #FFF4E6;
   position: absolute;
   width: 100%;
@@ -214,6 +213,18 @@
 
   h1 {
     color: $pink;
+  }
+
+  .bierlist {
+    display: flex;
+    align-items: center;
+
+    input {
+      margin-top: 7px;
+    }
+    label {
+      margin-right: 25px;
+    }
   }
 }
 

@@ -21,6 +21,20 @@
       <div class="row">
         <div class="col-xs-3">
           <%= tasting.date %>
+          (
+          <% if tasting.ambree? %>
+            ambrée
+          <% end %>
+          <% if tasting.surprise? %>
+            , surprise
+          <% end %>
+          <% if tasting.blonde? %>
+            , blonde
+          <% end %>
+          <% if tasting.ipa? %>
+            , IPA
+          <% end %>
+          )
         </div>
         <div class="col-xs-3">
           <%= tasting.capacity %>
