@@ -97,7 +97,7 @@
             <%= m.email %>
           </div>
           <div class="col-xs-4">
-          <%= link_to contact_path(m.id), method: :delete, data: { confirm: "Tu es sûr?" } do %>
+          <%= link_to contact_path(m.id), method: :delete do %>
             <p>Supprimer ce message</p>
           <% end %>
           </div>
