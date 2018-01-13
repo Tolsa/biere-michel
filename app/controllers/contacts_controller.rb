@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @contact.destroy
     if @contact.destroy
-      redirect_to tastings_path
+      redirect_to root_path
     end
   end
 
@@ -35,7 +35,7 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     if @contact.update(contact_params)
-      redirect_to tastings_path
+      redirect_to root_path
     else
       render :new
     end
