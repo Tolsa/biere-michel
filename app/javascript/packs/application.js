@@ -11,7 +11,7 @@ console.log('Hello World from Webpacker')
 import 'bootstrap';
 import swal from 'sweetalert';
 
-
+entryHomeBanner();
 addPopupToSubmit();
 displayEmails();
 scrollNav();
@@ -21,6 +21,12 @@ closeContact();
 fillingHiddenForm();
 
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
+
+function entryHomeBanner () {
+  $('.home-banner h1').addClass('animated slideInLeft');
+  $('.home-banner h2').addClass('animated slideInRight');
+  $('.navbar-container').addClass('animated fadeInDown');
+};
 
 function scrollNav () {
   const whoAreWe = document.getElementById('who-button')

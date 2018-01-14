@@ -3,10 +3,12 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.2.0",
+    "animate.css": "^3.5.2",
     "bootstrap": "3",
     "coffeescript": "1.12.7",
     "jquery": "^3.2.1",
-    "sweetalert": "^2.1.0"
+    "sweetalert": "^2.1.0",
+    "webpacker": "0.0.3"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.7"
