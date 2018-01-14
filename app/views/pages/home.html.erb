@@ -65,6 +65,7 @@
           <p> Désolé, la soirée dégustation du <%= Tasting.where(open: true).first.date %> est complète ! </p>
           <% else %>
             <p>Inscrivez-vous pour la prochaine soirée dégustation du <%= Tasting.where(open: true).first.date %></p>
+            <h4>Bières proposées :</h4>
             <div class="bierdisplay">
               <% if Tasting.where(open: true).first.ambree? %>
                 <h3 class="display-true">ambree</h3>
