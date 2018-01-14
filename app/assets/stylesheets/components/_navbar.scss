@@ -1,6 +1,7 @@
 .navbar-container {
   z-index: 10;
   display: flex;
+  animation-duration: 3s;
   p {
     color: $white;
     cursor: pointer;
