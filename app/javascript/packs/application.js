@@ -23,9 +23,12 @@ fillingHiddenForm();
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
 function entryHomeBanner () {
-  $('.home-banner h1').addClass('animated slideInLeft');
-  $('.home-banner h2').addClass('animated slideInRight');
-  $('.navbar-container').addClass('animated fadeInDown');
+  const homeBanner = document.querySelector('.home-banner')
+  if (homeBanner) {
+    $('.home-banner h1').addClass('animated slideInLeft');
+    $('.home-banner h2').addClass('animated slideInRight');
+    $('.navbar-container').addClass('animated fadeInDown');
+  }
 };
 
 function scrollNav () {
