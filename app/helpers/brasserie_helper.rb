@@ -1,0 +1,2 @@
+module BrasserieHelper
+end
