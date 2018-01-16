@@ -16,6 +16,7 @@ gem 'cloudinary'
 gem 'devise'
 gem 'pundit'
 gem 'jquery-rails'
+gem 'figaro'
 
 #Geocoder
 gem 'geocoder'
