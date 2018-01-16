@@ -194,6 +194,7 @@ function contactUs () {
       if (contactPopup.style["opacity"] == 1) {
         contactPopup.style.display = "unset";
         contactPopup.style["z-index"] = '100';
+        $(contactPopup).addClass('animated fadeInUp');
       }
     });
   }
@@ -204,6 +205,7 @@ function closeContact (){
   const contactPopup = document.getElementById('contact-popup')
   if (closeContactCross) {
     closeContactCross.addEventListener("click", (event) => {
+      $(contactPopup).removeClass('animated fadeInUp');
       if ($('#contact-popup').css('opacity') == 1){
 
 
