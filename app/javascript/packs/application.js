@@ -27,7 +27,7 @@ function entryHomeBanner () {
   if (homeBanner) {
     $('.home-banner h1').addClass('animated slideInLeft');
     $('.home-banner h2').addClass('animated slideInRight');
-    $('.navbar-container').addClass('animated fadeInDown');
+    // $('.navbar-container').addClass('animated fadeInDown');
   }
 };
 
@@ -188,14 +188,17 @@ function checkEmail () {
 function contactUs () {
   const contactButton = document.querySelector('.contact-button')
   const contactPopup = document.getElementById('contact-popup')
+  const body = document.querySelector('body')
   if (contactButton) {
     contactButton.addEventListener("click", (event) =>{
-      contactPopup.style["opacity"] = 1;
-      if (contactPopup.style["opacity"] == 1) {
-        contactPopup.style.display = "unset";
-        contactPopup.style["z-index"] = '100';
+      // body.style["overflow"] = 'hidden';
+      event.preventDefault();
+      event.stopPropagation();
+      contactPopup.style["z-index"] = 100;
+        $(contactPopup).removeClass('animated fadeOutDown');
         $(contactPopup).addClass('animated fadeInUp');
-      }
+        // $('html, body').animate({scrollTop:$(document).height()}, 0);
+
     });
   }
 }
@@ -209,10 +212,9 @@ function closeContact (){
       if ($('#contact-popup').css('opacity') == 1){
 
 
-          $('#contact-popup').animate({opacity:0}, 700);
+          $('#contact-popup').addClass('animated fadeOutDown');
           setTimeout(function() {
-            contactPopup.style.display='none';
-            contactPopup.style["z-index"] = '-50';}, 1000);
+            contactPopup.style["z-index"] = -50;}, 1000);
       }
 
     })
