@@ -2,12 +2,12 @@
   background-color: rgba(57, 67, 81, 0.95);
   position: absolute;
   bottom: 0px;
-  z-index: -10;
-  display: none;
   width: 100%;
   padding: 20px;
+  z-index: -50;
   h4 {
     color: $peach;
+    letter-spacing: 2.5px;
   }
   form {
     display: flex;
@@ -15,6 +15,9 @@
   }
   input {
     font-size: 16px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -40,21 +43,28 @@
   padding: 5px;
   background-color: $peach;
   color: $blue;
+  font-size: 16px;
+  @media (min-width: 300px) and (max-width: 700px) {
+    font-size: 14px;
+  }
 }
 
 #close-popup {
   height: 55px;
-  width: 235px;
-  background-color: rgba(0,0,0,0);
-  font-size: 18px;
-  color: $peach;
-  border: 2px solid $peach;
+  width: 288px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2.5px solid #FFF4E6;
+  color: #FFF4E6;
+  font-weight: bold;
+  font-size: 20px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   @media (min-width: 300px) and (max-width: 700px) {
     width: 235px;
-    font-size: 16px;
-    color: $peach;
-    border: 1px solid $peach;
-    height: 45px;
+    border: 2px solid #FFF4E6;
+    height: 40px;
+    color: #FFF4E6;
+    font-size: 16px !important;
   }
 }
 

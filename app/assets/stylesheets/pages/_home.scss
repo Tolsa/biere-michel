@@ -238,6 +238,7 @@ p {
     h4 {
       color: $pink;
       margin-bottom: 6px;
+      letter-spacing: 1.5px;
     }
     .bierdisplay {
       display: flex;
@@ -299,6 +300,7 @@ p {
 .contact {
   display: flex;
   flex-direction: column;
+  background-color: $peach;
   align-items: center;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -325,6 +327,7 @@ p {
 
 .menu-admin {
   border-top: 4px solid $pink;
+  background-color: $peach;
   display: -webkit-box;
   padding: 20px;
   display: -ms-flexbox;
