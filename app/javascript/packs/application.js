@@ -11,7 +11,7 @@ console.log('Hello World from Webpacker')
 import 'bootstrap';
 import swal from 'sweetalert';
 
-entryHomeBanner();
+// entryHomeBanner();
 addPopupToSubmit();
 displayEmails();
 scrollNav();
@@ -22,14 +22,14 @@ fillingHiddenForm();
 
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
-function entryHomeBanner () {
-  const homeBanner = document.querySelector('.home-banner')
-  if (homeBanner) {
-    $('.home-banner h1').addClass('animated slideInLeft');
-    $('.home-banner h2').addClass('animated slideInRight');
-    // $('.navbar-container').addClass('animated fadeInDown');
-  }
-};
+// function entryHomeBanner () {
+//   const homeBanner = document.querySelector('.home-banner')
+//   if (homeBanner) {
+//     $('.home-banner h1').addClass('animated slideInLeft');
+//     $('.home-banner h2').addClass('animated slideInRight');
+//     $('.navbar-container').addClass('animated fadeInDown');
+//   }
+// };
 
 function scrollNav () {
   const whoAreWe = document.getElementById('who-button')
@@ -78,13 +78,13 @@ function addPopupToSubmit () {
         }
         else {
           swal("On t'enverra un mail de confirmation, ça te va?", {
-            buttons: ["J'annule", "J'adhère"],
+            buttons: ["Je ne m'inscris pas", "Ok!"],
             className: 'sweetalert-confirm',
           });
           const OkButton = document.querySelectorAll(".swal-button")[1]
           OkButton.addEventListener("click", (event) => {
             const form = document.querySelector('form')
-            setTimeout(form.submit(), 4000);
+            setTimeout(form.submit(), 3000);
             const regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
             const emailField = document.getElementById('guest_email').value
             if (emailField.match(regex)) {
