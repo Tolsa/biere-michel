@@ -214,7 +214,8 @@ function closeContact (){
 
           $('#contact-popup').addClass('animated fadeOutDown');
           setTimeout(function() {
-            contactPopup.style["z-index"] = -50;}, 1000);
+            contactPopup.style["z-index"] = -50;
+            $(contactPopup).removeClass('animated fadeOutDown');}, 800);
       }
 
     })
