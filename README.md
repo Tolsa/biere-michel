@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Le site de la bière michel existe pour faire la promotion d'une idée d'un groupe d'amis : faire une bière complètement bio de manière artisanale et collaborative... et évidemment la faire déguster aux amateurs ensuite.
 
-Things you may want to cover:
+Pas de vente ici, juste du kiff houblonné !
 
-* Ruby version
+Dans ce repo vous trouverez tout le code du site, n'hésitez pas à me faire des retours :)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Pour voir le site pour le moment :
+https://bieremichel.herokuapp.com
