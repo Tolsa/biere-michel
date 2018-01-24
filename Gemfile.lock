@@ -267,6 +267,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   pundit
+  rack-cors
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
   selenium-webdriver
