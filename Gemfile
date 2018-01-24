@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'forest_liana'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
 gem 'font-awesome-sass'
