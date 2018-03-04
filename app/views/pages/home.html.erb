@@ -8,9 +8,7 @@
 
   <div id="who-are-we">
     <h3>Qui sommes-nous ?</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at mattis eros. Sed ornare nisi nec eleifend varius. In sit amet faucibus orci. Aenean convallis ligula odio, et dapibus tellus fringilla ut.
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at mattis eros. Sed ornare nisi nec eleifend varius. In sit amet faucibus orci. </p>
+    <p>La Brasserie de la Bière Michel est une association de 7 amis parisiens se retrouvant avec l’envie de brasser leur propre bière afin faire découvrir cette boisson maltée sous l’angle des micro-brasseries, bien loin des géants de la bière. Pour cela, nos brassages sont ouverts à toutes et à tous, et nous organisons régulièrement des soirées dégustations où l’échange est le mot d’ordre. Par ailleurs, pour certains brassins d’exception, nous maltons nous même l’orge d’un agriculteur proche de la brasserie et cultivons sur les murs de Paris une partie du houblon utilisé.</p>
     <div class="crew-pictures">
       <div class="item-crew">
         <%= image_tag "Fab.jpg" %>
@@ -33,32 +31,30 @@
   <div id="the-brew">
     <h3>les brassages</h3>
     <div class="brew-content">
-      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at mattis eros. Sed ornare nisi nec eleifend varius. In sit amet faucibus orci. Aenean convallis ligula odio, et dapibus tellus fringilla ut.
-      <br/><br/>
-
-      On peut détailler ici la fabrication de la sainte bière, avec un petit peu de détail mais pas trop, un peu comme un post de blog pas trop long.<br/><br/>
-
-      Ami de la synthèse à vos stylos !!<br/><br/>
-
-      Merci bisous à tous.
+      <p> Les variétés de bières proposées par la brasserie sont choisis selon l’envie du moment, la saison et évidement vos suggestions, mais la palette est large (Pale Ale, Amber Ale, IPA, Saison, Session IPA…). Nos brassins se font dans des cuves de 150 litres selon le principe de fermentation haute produisant environs 80 litres de bières à partager. Actuellement, nous nous réunissons pour brasser une à deux fois par mois et nous nous organisons pour augmenter notre nombre de brassins !
       </p>
-
     </div>
-
   </div>
 
-  <div id="tasting">
-    <h3>dégustations</h3>
-<!--     <p>Tous les mois, nos bières sont dégustés avec la grande famille du houblon au 141 boulevard Saint-Michel.</p>
-    <div class="gmaps">
-      <div
-        id="map"
-        style="width: 100%;
-        height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-      ></div>
-    </div> -->
-    <p>Une petite inscription vous permettra peut être de gloser, ripailler, boire et chanter avec la troupe de la Bière Michel.</p>
+  <div id="trusted-partner">
+    <h3 class="trusted-header">Ils nous soutiennent</h3>
+    <div class="partner-pictures">
+      <div class="item-partner">
+        <a href="https://www.paris.fr/actualites/houblon-saison-1-les-8-laureats-sont-5541">
+          <%= image_tag "mairie.png" %>
+        </a>
+      </div>
+      <div class="item-partner">
+        <a href="https://www.lewagon.com/fr">
+          <%= image_tag "wagon.png" %>
+        </a>
+      </div>
+      <div class="item-partner">
+        <a href="http://www.parisculteurs.paris/fr/sites/houblon-saison-1/">
+          <%= image_tag "parisculteur.png" %>
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="inscription">
@@ -103,7 +99,8 @@
       <% end %>
     </div>
   </div>
-  <div class="contact">
+
+  <div id="contact">
     <p>Une question houblonnée, une envie de malt ?</p>
     <div class="contact-button">
       Nous contacter

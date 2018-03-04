@@ -50,11 +50,11 @@ function scrollNav () {
     });
   };
 
-  const degustation = document.getElementById('when-button')
-  if (degustation){
-    degustation.addEventListener("click", (event) => {
+  const contact = document.getElementById('contact-button')
+  if (contact){
+    contact.addEventListener("click", (event) => {
       event.preventDefault();
-      var scrollTo = jQuery('#tasting').offset().top;
+      var scrollTo = jQuery('#contact').offset().top;
       jQuery('body, html').animate({scrollTop: scrollTo}, 800);
     });
   };

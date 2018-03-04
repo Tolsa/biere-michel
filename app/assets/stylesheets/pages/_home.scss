@@ -81,12 +81,14 @@ p {
   flex-direction: column;
   align-items: center;
   padding-top: 13px;
+  min-height: 100vh;
   @media (min-width: 300px) and (max-width: 700px) {
     padding-top: 10px;
   }
 
   p {
-    width: 53%;
+    width: 60%;
+    text-align:justify;
     @media (min-width: 300px) and (max-width: 700px) {
      width: 80%;
     }
@@ -117,11 +119,43 @@ p {
   }
 }
 
+.trusted-header {
+  text-align:center;
+}
+
+.partner-pictures {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.item-partner {
+  padding: 22px 22px;
+  @media (min-width: 300px) and (max-width: 400px) {
+    padding: 10px 10px;
+  }
+  img {
+    width: 180px;
+    opacity: 0.35;
+    transition: all 0.3s ease;
+    @media (min-width: 300px) and (max-width: 400px) {
+     width: 50px;
+    }
+  }
+  img:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
 
 #the-brew {
   background: asset-url('brassage.jpg');
   background-size: cover;
   background-position: center;
+  height: 100vh;
   margin: 0px;
   width: 100%;
   display: flex;
@@ -146,12 +180,13 @@ p {
   }
   .brew-content {
     background-color: rgba(255, 244, 229,0.9);
+    margin: 70px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 500px;
     width: 50%;
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
 
     @media (min-width: 300px) and (max-width: 700px) {
       width: unset;
@@ -160,7 +195,7 @@ p {
     p {
       text-align: justify;
       padding: 40px 40px;
-      overflow: scroll;
+      // overflow: scroll;
     }
 
   }
@@ -299,7 +334,7 @@ p {
 }
 
 
-.contact {
+#contact {
   display: flex;
   flex-direction: column;
   background-color: $peach;
@@ -314,6 +349,7 @@ p {
   .contact-button {
     border: solid 4px $pink;
     color: $pink;
+    cursor: pointer;
     font-family: "Roboto Condensed";
     text-transform: uppercase;
     letter-spacing: 2px;
