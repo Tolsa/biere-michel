@@ -129,9 +129,6 @@ p {
   justify-content: space-around;
   margin-bottom: 60px;
   padding: 0 20px;
-  @media (min-width: 300px) and (max-width: 700px) {
-    margin-bottom: 30px;
-  }
 }
 
 .item-partner {
@@ -337,7 +334,7 @@ p {
 }
 
 
-.contact {
+#contact {
   display: flex;
   flex-direction: column;
   background-color: $peach;
@@ -352,6 +349,7 @@ p {
   .contact-button {
     border: solid 4px $pink;
     color: $pink;
+    cursor: pointer;
     font-family: "Roboto Condensed";
     text-transform: uppercase;
     letter-spacing: 2px;
