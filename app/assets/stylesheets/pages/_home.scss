@@ -77,7 +77,7 @@ p {
 
 #who-are-we {
   display: flex;
-  padding: 50px 0px;
+  padding: 20px 0px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -87,7 +87,7 @@ p {
   }
 
   p {
-    width: 60%;
+    width: 75%;
     text-align:justify;
     @media (min-width: 300px) and (max-width: 700px) {
      width: 80%;
@@ -99,7 +99,7 @@ p {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     @media (min-width: 300px) and (max-width: 700px) {
       padding: 0px 20px;
       margin-bottom: 30px;
@@ -113,6 +113,7 @@ p {
 
   .item-crew {
     padding: 22px 22px;
+    opacity: .85;
     @media (min-width: 300px) and (max-width: 700px) {
       padding: 10px 10px;
     }
