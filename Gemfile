@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'forest_liana'
+# gem 'rack-cors', :require => 'rack/cors'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
 gem 'font-awesome-sass'

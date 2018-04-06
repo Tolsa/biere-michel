@@ -174,7 +174,7 @@ p {
     height: 80px;
     align-items: center;
     justify-content: center;
-    padding: 0px 40px;
+    padding: 40px 40px;
     margin-top: 50px;
     @media (min-width: 300px) and (max-width: 700px) {
       height: 45px;
@@ -185,14 +185,14 @@ p {
   }
 
   .brew-content {
-    background-color: rgba(255, 244, 229,0.9);
-    margin: 70px 0;
-    display: flex;
-    align-items: center;
+    background-color: rgba(255,244,229,0.9);
+    margin: 38px 0;
+    margin-bottom: 40px;
+    -ms-flex-pack: center;
     justify-content: center;
     min-width: 500px;
     width: 50%;
-    // margin-bottom: 60px;
+    overflow: scroll;
 
     @media (min-width: 300px) and (max-width: 700px) {
       width: unset;
@@ -200,8 +200,10 @@ p {
     }
     p {
       text-align: justify;
-      padding: 40px 40px;
-      // overflow: scroll;
+      padding: 12px 45px;
+      overflow: scroll;
+      position: relative;
+      margin: 20px 0px;
     }
 
   }
