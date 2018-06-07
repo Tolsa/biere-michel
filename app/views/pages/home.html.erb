@@ -26,9 +26,9 @@
     </div>
   </div>
 
-  <div id="the-brew">
-    <h3>les brassages</h3>
+  <div id="the-lab">
     <div class="brew-content">
+      <h3>Notre laboratoire</h3>
       <p> Nous proposons à la dégustation deux variétés de bières. Une Pale Ale houblonnée, légère en alcool, idéale pour profiter d'une après-midi ensoleillée en terrasse et une saison belge, ronde en bouche. D'autres boissons sont prévues : IPA, ginger beer, kéfir... Passez-nous voir au 9 rue Esquirol, 75013 Paris. Nous vous accueillerons un verre à la main.
       </p>
     </div>
@@ -55,46 +55,17 @@
     </div>
   </div>
 
-  <div class="inscription">
-    <div class="inscription-form">
-      <!-- here we have to put a simple form for tasting -->
-      <h3>INSCRIPTION</h3>
-      <% if Tasting.all.first != nil %>
-        <% if Tasting.where(open:true).first != nil %>
-          <% if Participation.where(tasting_id: Tasting.where(open:true).first.id).count == Tasting.where(open:true).first.capacity %>
-          <p> Désolé, la soirée dégustation du <%= Tasting.where(open: true).first.date %> est complète ! </p>
-          <% else %>
-            <p>Inscrivez-vous pour la prochaine soirée dégustation du <%= Tasting.where(open: true).first.date %></p>
-            <h4>Bières proposées :</h4>
-            <div class="bierdisplay">
-              <% if Tasting.where(open: true).first.ambree? %>
-                <h3 class="display-true">ambree</h3>
-              <% else %>
-                <h3 class="display-false">ambree</h3>
-              <% end %>
-              <% if Tasting.where(open: true).first.ipa? %>
-                <h3 class="display-true">ipa</h3>
-              <% else %>
-                <h3 class="display-false">ipa</h3>
-              <% end %>
-              <% if Tasting.where(open: true).first.surprise? %>
-                <h3 class="display-true">surprise</h3>
-              <% else %>
-                <h3 class="display-false">surprise</h3>
-              <% end %>
-              <% if Tasting.where(open: true).first.blonde? %>
-                <h3 class="display-true">blonde</h3>
-              <% else %>
-                <h3 class="display-false">blonde</h3>
-              <% end %>
-            </div>
+  <div id="drink-life">
+    <div class="drink-content">
+      <h3>NOS BOISSONS VIVANTES</h3>
 
-            <%= render 'guests/new' %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <p>Aucune dégustation n'est prévue pour le moment, mais ça va arriver très prochainement !</p>
-      <% end %>
+      <p>Notre gamme de boissons fermentées sera bientôt disponible à la vente en ligne !</p>
+      <%= render 'contacts/new' %>
+      <div class="email-signup">
+        <input type="text" id="js-email-field" class="signup-input" placeholder="Mon Email">
+        <div class="css-signup"></div>
+        <input type="submit" id="js-save-email" class="signup-btn" value="Je reste informé(e)">
+      </div>
     </div>
   </div>
 

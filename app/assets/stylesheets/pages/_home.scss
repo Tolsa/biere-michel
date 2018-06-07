@@ -23,7 +23,7 @@
     color: $white;
     animation-duration: 3s;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 100px;
     letter-spacing: 6px;
     margin: 0px;
@@ -55,7 +55,7 @@
 h3 {
   color: $pink;
   font-size: 60px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 20px;
@@ -155,7 +155,7 @@ p {
 }
 
 
-#the-brew {
+#the-lab {
   background: asset-url('brassage.jpg');
   background-size: cover;
   background-position: center;
@@ -191,7 +191,7 @@ p {
     -ms-flex-pack: center;
     justify-content: center;
     min-width: 500px;
-    width: 50%;
+    width: 60%;
     overflow: scroll;
 
     @media (min-width: 300px) and (max-width: 700px) {
@@ -247,8 +247,8 @@ p {
   }
 }
 
-.inscription {
-  background: asset-url('inscription.jpg');
+#drink-life {
+  background: asset-url('drink-life.jpg');
   background-size: cover;
   margin: 0px;
   width: 100%;
@@ -259,13 +259,13 @@ p {
     background-position: center;
   }
 
-  .inscription-form {
+  .drink-content {
     background-color: rgba(255, 244, 229,0.9);
-    width: 58%;
+    width: 75%;
     min-height: 30vh;
     min-width: 500px;
     margin: 20px 20px;
-    padding: 10px 30px;
+    padding: 10px 40px;
     @media (min-width: 300px) and (max-width: 700px) {
       min-width: unset;
       width: unset;
@@ -285,58 +285,42 @@ p {
       margin-bottom: 6px;
       letter-spacing: 1.5px;
     }
-    .bierdisplay {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-      h3 {
-        margin-right: 10px;
-        font-size: 18px;
-        letter-spacing: 2px;
-        margin-top: 0px;
-        margin-bottom: 6px;
-      }
-      .display-true {
-        color: $pink;
-      }
-      .display-false {
-        color: rgba(255, 151, 137, 0.3);
-      }
-    }
   }
 
-  #new_guest {
-    input {
-      background-color: rgba(0,0,0,0);
-      border-color: rgba(0,0,0,0);
-      border-bottom: 1px solid $blue;
-      &:focus {
-        outline: 0px none;
-        border-bottom: 1px solid #394351;
-      }
-      // &:-webkit-autofill {
-      //   -webkit-box-shadow: 1 1 0px 1000px rgba(255, 244, 229,0.9) inset;
-      // }
-      &:-webkit-autofill,
-      &:-webkit-autofill:hover,
-      &:-webkit-autofill:focus,
-      &:-webkit-autofill:active {
-          -webkit-transition-delay: 99999s;
+  .email-signup{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    @media (min-width: 300px) and (max-width: 800px) {
+        display: block;
+    }
+    .signup-input{
+      padding : 4px 12px;
+      flex: 1 0 60%;
+      @media (min-width: 300px) and (max-width: 800px) {
+        width: 100%;
+        font-size: 14px;
       }
     }
-
-    #inscription {
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 1px;
-      border: 3px solid $pink;
+    .css-signup{
+      flex: 0 0 5%;
+    }
+    .signup-btn{
+      padding : 6px 12px;
+      background-color: rgba(0, 0, 0, 0);
+      border: 2.5px solid $pink;
       color: $pink;
-      font-size: 24px;
-      margin-top: 20px;
-      @media (min-width: 300px) and (max-width: 700px) {
+      font-family: "Roboto Condensed";
+      letter-spacing: 2px;
+      font-size: 20px !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      @media (min-width: 300px) and (max-width: 800px) {
+        width: 100%;
         border: 2px solid $pink;
-        font-size: 16px;
-        margin-top: 9px;
+        color: $pink;
+        margin-top: 10px;
+        font-size: 12px !important;
       }
     }
   }
