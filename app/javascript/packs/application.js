@@ -19,6 +19,7 @@ checkEmail();
 contactUs();
 closeContact();
 fillingHiddenForm();
+fillHiddenSignUp();
 
 // ------ LISTE DES FUNCTIONS CI DESSOUS //
 
@@ -41,11 +42,20 @@ function scrollNav () {
     });
   };
 
+  const beverage = document.getElementById('buy-button')
+  if (beverage){
+    beverage.addEventListener("click", (event) => {
+      event.preventDefault();
+      var scrollTo = jQuery('#drink-life').offset().top;
+      jQuery('body, html').animate({scrollTop: scrollTo}, 800);
+    });
+  };
+
   const brassage = document.getElementById('what-button')
   if (brassage){
     brassage.addEventListener("click", (event) => {
       event.preventDefault();
-      var scrollTo = jQuery('#the-brew').offset().top;
+      var scrollTo = jQuery('#the-lab').offset().top;
       jQuery('body, html').animate({scrollTop: scrollTo}, 800);
     });
   };
@@ -247,6 +257,42 @@ function fillingHiddenForm () {
       }
       else {
         swal("Oups, tu n'as pas rempli tous les champs", {
+          buttons: false,
+          className: 'sweetalert-mailsent',
+          showCancelButton: true,
+          showConfirmButton: false,
+        });
+      }
+    });
+  }
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function fillHiddenSignUp () {
+  const email = document.getElementById('js-email-field')
+  const saveEmail = document.getElementById('js-save-email')
+  const contactName = document.getElementById('contact_name')
+  const contactEmail = document.getElementById('contact_email')
+  if (saveEmail) {
+    saveEmail.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log('Merci');
+      if (email.value != "" && validateEmail(email.value)){
+        contactName.value = email.value
+        contactEmail.value = email.value
+        const form2 = document.getElementById('new_contact')
+        swal("Merci pour votre inscription ! Nous revenons vers vous avec des nouvelles fraîches et vivantes !", {
+          buttons: false,
+          className: 'sweetalert-confirm-2',
+        });
+        form2.submit();
+      }
+      else {
+        swal("Oups, tu n'as pas bien rempli ton email", {
           buttons: false,
           className: 'sweetalert-mailsent',
           showCancelButton: true,
