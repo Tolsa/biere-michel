@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .container {
-  background-color: $peach;
+  background-color: $green-sylki;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -12,7 +12,7 @@
 .home-banner {
   background: linear-gradient(-225deg, rgba(102,179,163,0.15) 0%, rgba(102,179,163,0.75) 60%), asset-url('VitrineApparition.jpg');
   background-size: cover;
-  height: 100vh;
+  height: calc(100vh - 50px);
   margin: 0px;
   width: 100%;
   display: flex;
@@ -22,7 +22,7 @@
   @media (min-width: 300px) and (max-width: 700px) {
     background: linear-gradient(-225deg, rgba(102,179,163,0.15) 0%, rgba(102,179,163,0.75) 60%), asset-url('vitrinemini.jpg');
     background-size: cover;
-    height: 100vh;
+    height: calc(100vh - 50px);
     margin: 0px;
     width: 100%;
     display: flex;
