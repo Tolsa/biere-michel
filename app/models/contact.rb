@@ -1,14 +1,11 @@
 class Contact < ApplicationRecord
-  validates :name, presence: true
   validates :email, presence: true
 
-  # before_create :add_to_list
+  after_create :subscribe_to_newsletter
 
-  # def add_to_list
-  #   list_id = "42337eae19"
-  #   @gb = Gibbon::Request.new
-  #   subscribe = @gb.lists(list_id).members.create(body: { name: self.name, email_address: self.email, status: “subscribed”, double_optin: false })
-  # end
+  private
 
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
 end
-

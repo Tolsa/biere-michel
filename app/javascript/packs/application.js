@@ -16,8 +16,6 @@ addPopupToSubmit();
 displayEmails();
 scrollNav();
 checkEmail();
-contactUs();
-closeContact();
 fillingHiddenForm();
 fillHiddenSignUp();
 
@@ -195,43 +193,6 @@ function checkEmail () {
   };
 };
 
-function contactUs () {
-  const contactButton = document.querySelector('.contact-button')
-  const contactPopup = document.getElementById('contact-popup')
-  const body = document.querySelector('body')
-  if (contactButton) {
-    contactButton.addEventListener("click", (event) =>{
-      // body.style["overflow"] = 'hidden';
-      event.preventDefault();
-      event.stopPropagation();
-      contactPopup.style["z-index"] = 100;
-        $(contactPopup).removeClass('animated fadeOutDown');
-        $(contactPopup).addClass('animated fadeInUp');
-        // $('html, body').animate({scrollTop:$(document).height()}, 0);
-
-    });
-  }
-}
-
-function closeContact (){
-  const closeContactCross = document.querySelector('.close-btn')
-  const contactPopup = document.getElementById('contact-popup')
-  if (closeContactCross) {
-    closeContactCross.addEventListener("click", (event) => {
-      $(contactPopup).removeClass('animated fadeInUp');
-      if ($('#contact-popup').css('opacity') == 1){
-
-
-          $('#contact-popup').addClass('animated fadeOutDown');
-          setTimeout(function() {
-            contactPopup.style["z-index"] = -50;
-            $(contactPopup).removeClass('animated fadeOutDown');}, 800);
-      }
-
-    })
-  }
-}
-
 function fillingHiddenForm () {
   const popupField1 = document.getElementById('popup-field1')
   const popupField2 = document.getElementById('popup-field2')
@@ -275,21 +236,20 @@ function validateEmail(email) {
 function fillHiddenSignUp () {
   const email = document.getElementById('js-email-field')
   const saveEmail = document.getElementById('js-save-email')
-  const contactName = document.getElementById('contact_name')
   const contactEmail = document.getElementById('contact_email')
   if (saveEmail) {
     saveEmail.addEventListener("click", (event) => {
       event.preventDefault();
       console.log('Merci');
       if (email.value != "" && validateEmail(email.value)){
-        contactName.value = email.value
         contactEmail.value = email.value
-        const form2 = document.getElementById('new_contact')
+        const formEmail = document.getElementById('new_contact')
         swal("Merci pour votre inscription ! Nous revenons vers vous avec des nouvelles fraîches et vivantes !", {
           buttons: false,
           className: 'sweetalert-confirm-2',
         });
-        form2.submit();
+        formEmail.submit();
+        email.value = '';
       }
       else {
         swal("Oups, tu n'as pas bien rempli ton email", {
