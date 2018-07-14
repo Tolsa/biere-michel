@@ -244,19 +244,21 @@ function fillHiddenSignUp () {
       if (email.value != "" && validateEmail(email.value)){
         contactEmail.value = email.value
         const formEmail = document.getElementById('new_contact')
-        swal("Merci pour votre inscription ! Nous revenons vers vous avec des nouvelles fraîches et vivantes !", {
+        swal({
+          title: "Merci pour ton inscription !",
+          text: "Nous revenons vers toi avec des nouvelles fraîches et vivantes !",
           buttons: false,
-          className: 'sweetalert-confirm-2',
+          className: 'sweetalert-mailadded',
         });
         formEmail.submit();
         email.value = '';
       }
       else {
-        swal("Oups, tu n'as pas bien rempli ton email", {
+        swal({
+          text: "Oups, tu n'as pas bien rempli ton email",
           buttons: false,
-          className: 'sweetalert-mailsent',
-          showCancelButton: true,
-          showConfirmButton: false,
+          icon: "error",
+          className: 'sweetalert-mailerror',
         });
       }
     });

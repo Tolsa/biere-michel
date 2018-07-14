@@ -105,55 +105,35 @@
   }
 }
 
-.sweetalert-mailcheck {
-  background-color: $peach;
+.sweetalert-mailadded {
+  background-color: $light-green;
+  .swal-title {
+    font-size: 24px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 18px;
+    }
+  }
   .swal-text {
     cursor: initial;
     border: none;
-  }
-}
-
-.sweetalert-confirm {
-  background-color: $peach;
-  .swal-text {
-    cursor: initial;
-    border: none;
-  }
-  .swal-footer {
-    display: flex;
-    justify-content: center;
-  }
-  .swal-button--cancel {
-    background-color: lightgray;
-    font-size: 15px;
-    cursor: pointer;
-    color: rgba(57, 67, 81, 0.7);
-  }
-  .swal-button--confirm {
-    background-color: $blue;
-    font-size: 15px;
-    cursor: pointer;
-    color: $white;
-  }
-}
-
-.sweetalert-confirm-2 {
-  background-color: $peach;
-  .swal-text {
-    cursor: initial;
-    border: none;
-    background-color: $peach;
+    background-color: $light-green;
     color: $blue;
-    font-size: 20px
+    font-size: 20px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 15px;
+    }
   }
 }
 
-
-.sweetalert-mailsent {
-  background-color: $peach;
-  opacity: 1;
+.sweetalert-mailerror {
+  background-color: $light-green;
   .swal-text {
+    background-color: $light-green;
     cursor: initial;
     border: none;
+    font-size: 20px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 15px;
+    }
   }
 }
