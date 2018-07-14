@@ -16,4 +16,8 @@ class PagesController < ApplicationController
     end
   end
 
+  def homees
+    @contact = Contact.new
+  end
+
 end

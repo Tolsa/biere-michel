@@ -19,6 +19,7 @@ gem 'cloudinary'
 gem 'devise'
 gem 'pundit'
 gem 'jquery-rails'
+gem 'gibbon'
 
 #Geocoder
 gem 'geocoder'
@@ -55,6 +56,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails', groups: [:development, :test]
 end
 
 group :development do

@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .container {
-  background-color: $peach;
+  background-color: $green-sylki;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -10,28 +10,40 @@
 }
 
 .home-banner {
-  background: asset-url('home-banner.jpg');
+  background: linear-gradient(-225deg, rgba(102,179,163,0.15) 0%, rgba(102,179,163,0.75) 60%), asset-url('VitrineApparition.jpg');
   background-size: cover;
-  height: 100vh;
+  height: calc(100vh - 50px);
   margin: 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (min-width: 300px) and (max-width: 700px) {
+    background: linear-gradient(-225deg, rgba(102,179,163,0.15) 0%, rgba(102,179,163,0.75) 60%), asset-url('vitrinemini.jpg');
+    background-size: cover;
+    height: calc(100vh - 50px);
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   h1 {
     color: $white;
     animation-duration: 3s;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 100px;
+    font-size: 60px;
     letter-spacing: 6px;
+    padding: 20px;
     margin: 0px;
-    margin-bottom: 10px;
+    text-align: center;
     text-shadow: 1px 1px 20px rgba(33,33,33,0.6),
     -1px -1px 20px rgba(33,33,33,0.6);
     @media (min-width: 300px) and (max-width: 700px) {
-      font-size: 42px;
+      font-size: 38px;
     }
   }
 
@@ -51,392 +63,77 @@
   }
 }
 
-
-h3 {
-  color: $pink;
-  font-size: 60px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  margin-bottom: 20px;
-  @media (min-width: 300px) and (max-width: 700px) {
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-  }
-}
-
-p {
-  color: $blue;
-  letter-spacing: 1.5px;
-  @media (min-width: 300px) and (max-width: 700px) {
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-}
-
-#who-are-we {
+.email-signup{
+  padding: 10px 0;
   display: flex;
-  padding: 20px 0px;
-  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  min-height: 100vh;
   @media (min-width: 300px) and (max-width: 700px) {
-    padding-top: 10px;
+      display: block;
   }
-
-  p {
-    width: 80%;
-    padding: 20px;
-    text-align:justify;
+  .signup-input{
+    padding : 4px 12px;
+    flex: 1 0 60%;
     @media (min-width: 300px) and (max-width: 700px) {
-     width: 90%;
-    }
-
-  }
-
-  .crew-pictures {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    margin-bottom: 40px;
-    width: 80%;
-    @media (min-width: 300px) and (max-width: 700px) {
-      width: 90%;
-      margin-bottom: 30px;
-    }
-    img {
-      width: 150px;
-      @media (min-width: 300px) and (max-width: 700px) {
-       width: 75px;
-      }
-    }
-  }
-
-  .item-crew {
-    padding: 20px 20px;
-    opacity: .85;
-    @media (min-width: 300px) and (max-width: 700px) {
-      padding: 10px 10px;
-    }
-  }
-}
-
-.trusted-header {
-  text-align:center;
-}
-
-.partner-pictures {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin-bottom: 60px;
-  padding: 0 20px;
-}
-
-.item-partner {
-  padding: 22px 22px;
-  @media (min-width: 300px) and (max-width: 400px) {
-    padding: 10px 10px;
-  }
-  img {
-    width: 180px;
-    opacity: 0.35;
-    transition: all 0.3s ease;
-    @media (min-width: 300px) and (max-width: 400px) {
-     width: 50px;
-    }
-  }
-  img:hover{
-    cursor: pointer;
-    opacity: 1;
-  }
-}
-
-
-#the-lab {
-  background: asset-url('brassage.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin: 0px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  h3 {
-    width: 563px;
-    background-color: #FFF4E6;
-    text-align: center;
-    display: flex;
-    height: 80px;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 40px;
-    margin-top: 50px;
-    @media (min-width: 300px) and (max-width: 700px) {
-      height: 45px;
-      letter-spacing: 1px;
-      width: 249px;
-      padding: 0px;
-    }
-  }
-
-  .brew-content {
-    background-color: rgba(255,244,229,0.9);
-    margin: 38px 0;
-    margin-bottom: 40px;
-    -ms-flex-pack: center;
-    justify-content: center;
-    min-width: 500px;
-    width: 60%;
-    overflow: scroll;
-
-    @media (min-width: 300px) and (max-width: 700px) {
-      width: unset;
-      min-width: unset;
-    }
-    p {
-      text-align: justify;
-      padding: 12px 45px;
-      overflow: scroll;
-      position: relative;
-      margin: 20px 0px;
-    }
-
-  }
-
-}
-
-
-#tasting {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 13px;
-  @media (min-width: 300px) and (max-width: 700px) {
-    padding-top: 10px;
-  }
-  .gmaps {
-    height: 400px;
-    width:100%;
-    background-position: center;
-    #map {
       width: 100%;
-      height: 100% !important;
-      position: relative;
-      overflow: hidden;
-    }
-  }
-
-  h3 {
-    margin-bottom: 0px;
-  }
-
-  p {
-    width: 50%;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    @media (min-width: 300px) and (max-width: 700px) {
-      width: 60%;
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-  }
-}
-
-#drink-life {
-  background: asset-url('drink-life.jpg');
-  background-size: cover;
-  margin: 0px;
-  width: 100%;
-  z-index: 50;
-  padding: 32px;
-  @media (min-width: 300px) and (max-width: 700px) {
-    padding: 10px;
-    background-position: center;
-  }
-
-  .drink-content {
-    background-color: rgba(255, 244, 229,0.9);
-    width: 75%;
-    min-height: 30vh;
-    min-width: 500px;
-    margin: 20px 20px;
-    padding: 10px 40px;
-    @media (min-width: 300px) and (max-width: 700px) {
-      min-width: unset;
-      width: unset;
-    }
-    h3 {
-      color: $pink;
-      @media (min-width: 300px) and (max-width: 700px) {
-        margin-top: 15px;
-      }
-    }
-    p {
-      padding: 0px;
-      color: $blue;
-    }
-    h4 {
-      color: $pink;
-      margin-bottom: 6px;
-      letter-spacing: 1.5px;
-    }
-  }
-
-  .email-signup{
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-around;
-    @media (min-width: 300px) and (max-width: 800px) {
-        display: block;
-    }
-    .signup-input{
-      padding : 4px 12px;
-      flex: 1 0 60%;
-      @media (min-width: 300px) and (max-width: 800px) {
-        width: 100%;
-        font-size: 14px;
-      }
-    }
-    .css-signup{
-      flex: 0 0 5%;
-    }
-    .signup-btn{
-      padding : 6px 12px;
-      background-color: rgba(0, 0, 0, 0);
-      border: 2.5px solid $pink;
-      color: $pink;
-      font-family: "Roboto Condensed";
-      letter-spacing: 2px;
-      font-size: 20px !important;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      @media (min-width: 300px) and (max-width: 800px) {
-        width: 100%;
-        border: 2px solid $pink;
-        color: $pink;
-        margin-top: 10px;
-        font-size: 12px !important;
-      }
-    }
-  }
-}
-
-
-#contact {
-  display: flex;
-  flex-direction: column;
-  background-color: $peach;
-  min-height: 30vh;
-  align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  z-index: 50;
-  @media (min-width: 300px) and (max-width: 700px) {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .contact-button {
-    border: solid 4px $pink;
-    color: $pink;
-    cursor: pointer;
-    font-family: "Roboto Condensed";
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: normal;
-    padding: 4px 12px;
-    font-size: 34px;
-    @media (min-width: 300px) and (max-width: 700px) {
-      border: 2px solid $pink;
       font-size: 16px;
     }
   }
-  .close-btn {
-    cursor: pointer;
+  .css-signup{
+    flex: 0 0 5%;
+  }
+  .signup-btn{
+    transition: all 0.3s ease;
+    padding : 6px 12px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2.5px solid $yellow;
+    color: $yellow;
+    font-family: "Roboto Condensed";
+    letter-spacing: 2px;
+    font-size: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      width: 100%;
+      border: 2px solid $yellow;
+      margin-top: 10px;
+      font-size: 15px !important;
+    }
+  }
+  .signup-btn:hover{
+    background-color: $yellow;
+    color: rgb(255, 255, 255);
   }
 }
 
-.menu-admin {
-  border-top: 4px solid $pink;
-  background-color: $peach;
-  display: -webkit-box;
-  padding: 20px;
-  display: -ms-flexbox;
-  display: flex;
-  z-index: 50;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  color: $blue;
-  @media (min-width: 300px) and (max-width: 700px) {
-    border-top: 2px solid $pink;
-    font-size: 16px;
-    padding: 10px;
-  }
-  a {
+.sweetalert-mailadded {
+  background-color: $light-green;
+  .swal-title {
+    font-size: 24px;
     @media (min-width: 300px) and (max-width: 700px) {
-      font-size: 10px;
-      padding: 15px;
+      font-size: 18px;
+    }
+  }
+  .swal-text {
+    cursor: initial;
+    border: none;
+    background-color: $light-green;
+    color: $blue;
+    font-size: 20px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 15px;
     }
   }
 }
 
-
-.sweetalert-mailcheck {
-  background-color: $peach;
+.sweetalert-mailerror {
+  background-color: $light-green;
   .swal-text {
+    background-color: $light-green;
     cursor: initial;
     border: none;
-  }
-}
-
-.sweetalert-confirm {
-  background-color: $peach;
-  .swal-text {
-    cursor: initial;
-    border: none;
-  }
-  .swal-footer {
-    display: flex;
-    justify-content: center;
-  }
-  .swal-button--cancel {
-    background-color: lightgray;
-    font-size: 15px;
-    cursor: pointer;
-    color: rgba(57, 67, 81, 0.7);
-  }
-  .swal-button--confirm {
-    background-color: $blue;
-    font-size: 15px;
-    cursor: pointer;
-    color: $white;
-  }
-}
-
-.sweetalert-confirm-2 {
-  background-color: $peach;
-  .swal-text {
-    cursor: initial;
-    border: none;
-    background-color: $peach;
-    color: $blue;
-    font-size: 20px
-  }
-}
-
-
-.sweetalert-mailsent {
-  background-color: $peach;
-  opacity: 1;
-  .swal-text {
-    cursor: initial;
-    border: none;
+    font-size: 20px;
+    @media (min-width: 300px) and (max-width: 700px) {
+      font-size: 15px;
+    }
   }
 }

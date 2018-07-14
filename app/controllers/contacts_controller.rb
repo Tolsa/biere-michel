@@ -7,8 +7,8 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if @contact.save
-      redirect_to root_path
+    if !Contact.where(email: @contact.email).exists?
+      @contact.save
     end
   end
 
@@ -44,6 +44,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :message)
+    params.require(:contact).permit(:email)
   end
 end

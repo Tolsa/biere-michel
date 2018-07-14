@@ -28,5 +28,4 @@
 # Ignore application configuration
 /config/application.yml
 
-# Ignore Gibbon config
-/config/initializers/gibbon.rb
+.env*
