@@ -10,7 +10,7 @@
 }
 
 .home-banner {
-  background: linear-gradient(-225deg, rgba(102,179,163,0.15) 0%, rgba(102,179,163,0.75) 60%), asset-url('VitrineApparition.jpg');
+  background: linear-gradient(-225deg, rgba(102,179,163,0.25) 0%, rgba(102,179,163,0.85) 60%), asset-url('VitrineApparition.jpg');
   background-size: cover;
   height: calc(100vh - 50px);
   margin: 0px;
@@ -43,7 +43,8 @@
     text-shadow: 1px 1px 20px rgba(33,33,33,0.6),
     -1px -1px 20px rgba(33,33,33,0.6);
     @media (min-width: 300px) and (max-width: 700px) {
-      font-size: 38px;
+      font-size: 32px;
+      letter-spacing: 3px;
     }
   }
 
@@ -61,7 +62,32 @@
       letter-spacing: 2.95px;
     }
   }
+
+  .lab-content {
+    background-color: $green-sylki;
+    margin: 38px 0;
+    margin-bottom: 40px;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-width: 500px;
+    width: 50%;
+
+    @media (min-width: 300px) and (max-width: 700px) {
+      width: unset;
+      min-width: unset;
+    }
+    p {
+      color: $peach;
+      text-align: justify;
+      padding: 12px 45px;
+      overflow: scroll;
+      position: relative;
+      margin: 20px 0px;
+    }
+  }
+
 }
+
 
 .email-signup{
   padding: 10px 0;

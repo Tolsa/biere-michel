@@ -1,21 +1,35 @@
 .navbar-container {
-  z-index: 10;
+  background-color: $yellow;
   display: flex;
-  animation-duration: 3s;
+  padding-top: 4px;
   p {
-    color: $white;
-    cursor: pointer;
+    color: $green-sylki;
+    margin: 0px;
+    font-weight: 550;
     @media (min-width: 300px) and (max-width: 700px) {
-      font-size: 10px;
-      letter-spacing: 1px;
+      font-size: 14px;
     }
   }
   width: 100%;
-  justify-content: space-around;
-  padding: 40px 40px 0 40px;
-  letter-spacing: 3px;
-  font-size: 16px;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+}
+
+.navbar-ulule{
+  width : 30px;
   @media (min-width: 300px) and (max-width: 700px) {
-    padding: 10px 10px 0 10px;
+    width : 20px;
   }
+}
+
+.navbar-content-to-hide {
+  padding-right: 5px;
+  @media (min-width: 300px) and (max-width: 700px) {
+    display: none;
+  }
+}
+
+.ulule-link {
+  display: flex;
 }
