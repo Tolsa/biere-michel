@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#homees'
 
+  get "/ulule" => redirect("https://fr.ulule.com/sylki")
   resources :beers
   resources :guests
   resources :tastings
